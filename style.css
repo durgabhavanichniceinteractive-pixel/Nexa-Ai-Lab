@@ -3097,76 +3097,437 @@ textarea.form-control,
 /* --------------------------------------------------------------------------
    SMALL MOBILE (360px down to 320px)
    -------------------------------------------------------------------------- */
+
 @media (max-width: 360px) {
   .container {
-    padding-left: 12px;
-    padding-right: 12px;
+    padding-left: 10px;
+    padding-right: 10px;
   }
+  .section {
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
 
-  /* Typography */
+  /* Typography Scale */
   h1 {
-    font-size: 1.8rem;
+    font-size: clamp(1.4rem, 6.8vw, 1.65rem);
+    line-height: 1.25;
   }
   h2 {
-    font-size: 1.45rem;
+    font-size: clamp(1.2rem, 5.8vw, 1.35rem);
+    line-height: 1.3;
   }
   h3 {
-    font-size: 1.15rem;
+    font-size: 1.08rem;
+    line-height: 1.35;
+  }
+  h4 {
+    font-size: 0.82rem;
+  }
+  p, li {
+    font-size: 0.85rem;
+    line-height: 1.55;
+  }
+  blockquote {
+    font-size: 0.95rem !important;
+    padding-left: 10px !important;
+    margin-bottom: 14px !important;
   }
 
-  /* Logo */
+  /* Header & Navigation */
+  .header-inner {
+    padding: 0;
+    gap: 6px;
+  }
+  .logo {
+    gap: 8px;
+  }
   .logo-text {
-    font-size: 1.05rem;
+    font-size: 0.92rem;
   }
   .logo-text span {
-    font-size: 0.72rem;
-    padding: 1px 4px;
+    font-size: 0.65rem;
+    padding: 1px 3px;
   }
   .logo-symbol {
-    width: 30px;
-    height: 30px;
+    width: 26px;
+    height: 26px;
+  }
+  .header-actions {
+    gap: 5px;
+  }
+  .header-status-pill {
+    padding: 3px 6px;
+    font-size: 0.62rem;
+    gap: 4px;
+  }
+  .header-status-pill .status-indicator {
+    width: 6px;
+    height: 6px;
+  }
+  .header-status-pill span.status-text-full {
+    display: none !important;
+  }
+  .hamburger {
+    width: 38px;
+    height: 38px;
+    padding: 6px;
   }
 
-  /* Stats Grid: Linearize for narrow screens */
+  /* Hero Section */
+  .hero {
+    padding-top: calc(var(--nav-height) + 14px);
+    padding-bottom: 24px;
+  }
+  .hero-title {
+    margin-bottom: 10px;
+  }
+  .hero-subtitle {
+    font-size: 0.84rem;
+    margin-bottom: 18px;
+  }
+  .hero-cta {
+    gap: 8px;
+    width: 100%;
+  }
+  .hero-cta .btn {
+    width: 100%;
+    justify-content: center;
+    padding: 10px 12px;
+    font-size: 0.8rem;
+  }
+  .hero-visual-stage {
+    height: 200px;
+    max-width: 100%;
+  }
+  .hero-hud-badge {
+    display: none !important;
+  }
+
+  /* AI Status Panel */
+  .status-panel-section-wrap {
+    margin-top: 20px;
+  }
+  .status-panel {
+    grid-template-columns: 1fr;
+    padding: 10px 8px;
+    gap: 8px;
+    border-radius: 8px;
+  }
+  .status-item {
+    padding: 8px;
+    gap: 8px;
+  }
+  .status-item svg {
+    width: 15px;
+    height: 15px;
+    flex-shrink: 0;
+  }
+  .status-label {
+    font-size: 0.6rem;
+  }
+  .status-val {
+    font-size: 0.76rem;
+  }
+
+  /* Global Cards */
+  .glass-card,
+  .tech-card,
+  .project-card,
+  .lab-panel,
+  .capability-card,
+  .stat-card,
+  .spec-card {
+    padding: 14px 10px;
+    border-radius: 8px;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  /* Tech Card */
+  .tech-card-icon {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 14px;
+  }
+  .tech-tag {
+    font-size: 0.64rem;
+    padding: 3px 6px;
+    letter-spacing: 0.05em;
+  }
+
+  /* Project Card */
+  .project-body {
+    padding: 14px 10px;
+  }
+  .project-media {
+    height: 150px;
+  }
+  .project-tags {
+    gap: 4px;
+    margin-bottom: 12px;
+  }
+  .project-tag {
+    font-size: 0.64rem;
+    padding: 2px 5px;
+  }
+  .project-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  .project-footer .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Robotics Specification Matrix */
+  .specs-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  .spec-card {
+    padding: 14px 10px;
+  }
+  .spec-val {
+    font-size: 1.4rem;
+    margin-bottom: 4px;
+  }
+  .spec-lbl {
+    font-size: 0.68rem;
+  }
+
+  /* Stats Grid */
   .stats-grid {
     grid-template-columns: 1fr;
     gap: 10px;
   }
-
-  /* Status Panel Items */
-  .status-item {
-    padding: 8px 10px;
-    gap: 8px;
+  .stat-card {
+    padding: 14px 10px;
   }
-  .status-val {
-    font-size: 0.8rem;
+  .stat-number {
+    font-size: 1.65rem;
+    margin-bottom: 4px;
   }
-
-  /* Glass Card */
-  .glass-card {
-    padding: 16px 12px;
+  .stat-label {
+    font-size: 0.78rem;
   }
 
-  /* Project Pipeline Step */
-  .project-pipeline {
-    font-size: 0.6rem;
-    padding: 8px 6px;
+  /* Future Lab */
+  .future-lab-container {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .lab-panel {
+    padding: 14px 10px;
+    min-height: auto;
+  }
+  .lab-panel-num {
+    font-size: 1.25rem;
+    margin-bottom: 8px;
+  }
+  .lab-panel-title {
+    font-size: 1.02rem;
+  }
+  .lab-panel-quote {
+    font-size: 0.82rem;
   }
 
-  /* Hero Visual Stage */
-  .hero-visual-stage {
-    height: 240px;
+  /* Interactive Console */
+  .console-wrapper {
+    margin-top: 18px;
+    border-radius: 8px;
   }
-
-  /* Console */
   .console-header {
-    padding: 10px 12px;
+    padding: 8px 10px;
   }
   .console-title {
-    font-size: 0.65rem;
+    font-size: 0.6rem;
+    max-width: 50%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
   .console-body {
-    padding: 12px 8px;
+    padding: 10px 8px;
+    font-size: 0.72rem;
+    line-height: 1.5;
+  }
+  .console-output {
+    padding: 8px;
+    font-size: 0.72rem;
+    margin: 10px 0;
+    min-height: 50px;
+  }
+  .console-actions {
+    gap: 6px;
+  }
+  .console-actions .btn {
+    width: 100%;
+    padding: 8px 10px;
     font-size: 0.75rem;
+    justify-content: center;
+  }
+
+  /* AI Terminal */
+  .ai-core-terminal {
+    padding: 12px 8px;
+    border-radius: 8px;
+  }
+  .terminal-prompt-prefix {
+    font-size: 0.72rem;
+  }
+  .terminal-response-container {
+    padding: 8px;
+  }
+  .terminal-response-text {
+    font-size: 0.78rem;
+  }
+
+  /* Robotics Viewport */
+  .robotics-stage {
+    padding: 12px 6px;
+    border-radius: 8px;
+  }
+  .robotics-viewport {
+    min-height: 190px;
+    height: 190px;
+  }
+  .robot-model-img {
+    max-height: 165px;
+  }
+  .hud-node {
+    padding: 6px 8px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .hud-node-title {
+    font-size: 0.62rem;
+  }
+  .hud-node-val {
+    font-size: 0.76rem;
+  }
+
+  /* Research Pipeline */
+  .pipeline-track {
+    gap: 16px;
+    margin: 24px 0;
+  }
+  .pipeline-node {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 8px;
+  }
+  .pipeline-title {
+    font-size: 0.8rem;
+  }
+  .pipeline-desc {
+    font-size: 0.7rem;
+  }
+  .research-pipeline-step-card {
+    padding: 12px 8px;
+  }
+  .research-pipeline-step-title {
+    font-size: 0.92rem;
+  }
+
+  /* Timeline */
+  .timeline-container {
+    margin-top: 24px;
+  }
+  .timeline-container::before {
+    left: 8px;
+  }
+  .timeline-item {
+    padding-left: 24px !important;
+    margin-bottom: 20px;
+  }
+  .timeline-dot {
+    left: 2px !important;
+    width: 12px;
+    height: 12px;
+  }
+
+  /* Forms & Inputs */
+  .form-group {
+    margin-bottom: 12px;
+  }
+  .form-label {
+    font-size: 0.66rem;
+    margin-bottom: 4px;
+  }
+  .form-control,
+  .form-input,
+  .form-select,
+  .form-textarea {
+    padding: 9px 8px;
+    font-size: 0.82rem;
+    border-radius: 4px;
+  }
+  textarea.form-control,
+  .form-textarea {
+    min-height: 80px;
+  }
+  .contact-grid {
+    gap: 16px;
+  }
+
+  /* Modals */
+  .modal-backdrop {
+    padding: 6px;
+  }
+  .modal-container {
+    padding: 16px 10px;
+    max-height: 92vh;
+    border-radius: 8px;
+  }
+  .modal-close {
+    top: 6px;
+    right: 6px;
+    width: 28px;
+    height: 28px;
+  }
+
+  /* Buttons */
+  .btn {
+    padding: 9px 12px;
+    font-size: 0.8rem;
+    justify-content: center;
+  }
+
+  /* Filter Tabs */
+  .filter-tabs {
+    gap: 4px;
+    margin-bottom: 16px;
+  }
+  .filter-btn {
+    padding: 5px 8px;
+    font-size: 0.68rem;
+  }
+
+  /* Footer */
+  .footer {
+    padding-top: 36px;
+    padding-bottom: 20px;
+  }
+  .footer-grid {
+    gap: 20px;
+  }
+  .footer-bottom {
+    font-size: 0.72rem;
+    gap: 6px;
+  }
+
+  /* Global text wraps & code bounding */
+  pre, code {
+    word-break: break-all;
+    white-space: pre-wrap;
+    max-width: 100%;
+  }
+  table {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
   }
 }
