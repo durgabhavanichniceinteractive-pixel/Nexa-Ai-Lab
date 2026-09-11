@@ -282,8 +282,8 @@ a {
 }
 
 .section {
-  padding-top: clamp(70px, 10vw, 120px);
-  padding-bottom: clamp(70px, 10vw, 120px);
+  padding-top: clamp(70px, 10vw, 30px);
+  padding-bottom: clamp(70px, 10vw, 30px);
   position: relative;
   z-index: 2;
 }
@@ -3186,10 +3186,11 @@ textarea.form-control,
     font-size: 0.84rem;
     margin-bottom: 18px;
   }
-  .hero-cta {
+.hero-cta {
     gap: 8px;
     width: 100%;
-  }
+    margin-bottom: 0px;
+}
   .hero-cta .btn {
     width: 100%;
     justify-content: center;
