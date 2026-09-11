@@ -1,0 +1,6 @@
+{
+  "name": "NEXA AI LAB",
+  "description": "An AI research and innovation laboratory focused on the future of artificial intelligence, robotics, automation, machine learning, computer vision, and generative AI.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

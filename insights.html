@@ -1,0 +1,352 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Insights — NEXA AI LAB | Thoughts from the Frontier</title>
+    <meta name="description" content="Technical briefs, essays, and dispatches from NEXA AI LAB scientists exploring the future of artificial intelligence, robotics, and computational ethics." />
+    <meta property="og:title" content="Insights — NEXA AI LAB" />
+    <meta property="og:description" content="Deep perspectives on autonomous agents, robotics convergence, and verifiable AI safety." />
+    <meta property="og:type" content="website" />
+    <meta name="theme-color" content="#030508" />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="cursor-dot"></div>
+    <div class="cursor-ring"></div>
+
+    <!-- Header -->
+    <header class="header" id="mainHeader">
+      <div class="container header-inner">
+        <a href="index.html" class="logo" aria-label="NEXA AI LAB Home">
+          <div class="logo-symbol">
+            <svg viewBox="0 0 48 48" fill="none">
+              <polygon points="24,4 42,14 42,34 24,44 6,34 6,14" stroke="#00f0ff" stroke-width="2" fill="rgba(0, 240, 255, 0.05)" />
+              <circle cx="24" cy="24" r="6" fill="#00f0ff" />
+            </svg>
+          </div>
+          <span class="logo-text">NEXA <span>AI LAB</span></span>
+        </a>
+
+        <nav aria-label="Primary Navigation">
+          <ul class="nav-links">
+            <li><a href="index.html" class="nav-link">Home</a></li>
+            <li><a href="about.html" class="nav-link">About</a></li>
+            <li><a href="technologies.html" class="nav-link">Technologies</a></li>
+            <li><a href="projects.html" class="nav-link">Projects</a></li>
+            <li><a href="research.html" class="nav-link">Research</a></li>
+            <li><a href="robotics.html" class="nav-link">Robotics</a></li>
+            <li><a href="insights.html" class="nav-link active">Insights</a></li>
+            <li><a href="contact.html" class="nav-link">Contact</a></li>
+          </ul>
+        </nav>
+
+        <div class="header-actions">
+          <button id="audioToggleBtn" class="btn btn-secondary btn-sm" aria-pressed="false">SFX: OFF</button>
+          <a href="#subscribe" class="btn btn-primary btn-sm">Subscribe &rarr;</a>
+          <button class="hamburger" id="hamburgerBtn" aria-label="Open navigation menu">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Mobile Navigation Drawer -->
+    <div class="mobile-nav-backdrop" id="mobileNavBackdrop"></div>
+    <div class="mobile-nav" id="mobileNav" aria-label="Mobile Navigation">
+      <div class="mobile-nav-header">
+        <div class="mobile-nav-brand">
+          <span class="status-indicator pulse green" style="width: 8px; height: 8px;"></span>
+          <span style="font-family: var(--font-heading); font-size: 0.95rem; letter-spacing: 0.08em;">NEXA <span class="text-gradient">LAB</span></span>
+        </div>
+        <button class="mobile-nav-close" id="mobileNavClose" aria-label="Close mobile navigation menu" type="button">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+          <span>CLOSE</span>
+        </button>
+      </div>
+      <ul class="mobile-links">
+        <li><a href="index.html">01. Home &rarr;</a></li>
+        <li><a href="about.html">02. About &rarr;</a></li>
+        <li><a href="technologies.html">03. Technologies &rarr;</a></li>
+        <li><a href="projects.html">04. Projects &rarr;</a></li>
+        <li><a href="research.html">05. Research &rarr;</a></li>
+        <li><a href="robotics.html">06. Robotics &rarr;</a></li>
+        <li><a href="insights.html" class="active">07. Insights &rarr;</a></li>
+        <li><a href="contact.html">08. Contact &rarr;</a></li>
+      </ul>
+      <div class="mobile-nav-footer">
+        <a href="contact.html" class="btn btn-primary" style="width: 100%;">Connect With Us &rarr;</a>
+      </div>
+    </div>
+
+    <main>
+      <!-- PAGE HERO -->
+      <section class="page-hero">
+        <div class="container">
+          <div class="hero-tag">
+            <span class="tech-tag">LABORATORY DISPATCHES</span>
+          </div>
+          <h1 class="hero-title">
+            THOUGHTS FROM <br />
+            <span class="text-gradient">THE FRONTIER</span>
+          </h1>
+          <p class="hero-subtitle">
+            Scientific essays, architectural deep-dives, and ethical deliberations written by resident researchers, engineers, and fellows at NEXA AI LAB.
+          </p>
+        </div>
+      </section>
+
+      <!-- INSIGHTS GRID & FILTERING -->
+      <section class="section">
+        <div class="container">
+          <div class="filter-tabs reveal-on-scroll">
+            <button class="filter-btn active" data-insight-filter="all">ALL ESSAYS (6)</button>
+            <button class="filter-btn" data-insight-filter="research">RESEARCH</button>
+            <button class="filter-btn" data-insight-filter="robotics">ROBOTICS</button>
+            <button class="filter-btn" data-insight-filter="ethics">ETHICS & ALIGNMENT</button>
+            <button class="filter-btn" data-insight-filter="future-tech">FUTURE TECH</button>
+          </div>
+
+          <div class="insights-grid">
+            <!-- Article 1 -->
+            <article class="glass-card insight-card reveal-on-scroll" data-insight-cat="research">
+              <div class="insight-header">
+                <span class="tech-tag">RESEARCH</span>
+                <span class="insight-date">FEB 28, 2026 &bull; 6 MIN READ</span>
+              </div>
+              <h3>The Shift to Autonomous AI Agents: Why Chatbots Were Just the Beginning</h3>
+              <p>
+                As language models transition from reactive conversational text predictors to goal-driven autonomous software agents, episodic memory and tool synthesis redefine enterprise software.
+              </p>
+              <div class="insight-footer">
+                <div class="insight-author">Dr. A. Vance &bull; Lead Scientist</div>
+                <button class="btn btn-secondary btn-sm" onclick="openInsightModal('The Shift to Autonomous AI Agents', 'Dr. A. Vance', 'Chatbots answered questions; agents execute non-linear multi-day projects. In this dispatch, we analyze the transition from single-turn autocomplete to persistent episodic execution loops. Key highlights include neuro-symbolic plan rollback, verifiable sandboxes, and why autonomy requires formal invariants rather than prompt-based guardrails.')">Read Brief &rarr;</button>
+              </div>
+            </article>
+
+            <!-- Article 2 -->
+            <article class="glass-card insight-card reveal-on-scroll" data-insight-cat="robotics">
+              <div class="insight-header">
+                <span class="tech-tag tech-tag-purple">ROBOTICS</span>
+                <span class="insight-date">FEB 14, 2026 &bull; 8 MIN READ</span>
+              </div>
+              <h3>The Convergence of Robotics and Foundation Models</h3>
+              <p>
+                How pre-trained multimodal representations allow physical bipedal and quadrupedal machines to perform zero-shot manipulation in unmapped homes and factories.
+              </p>
+              <div class="insight-footer">
+                <div class="insight-author">Dr. E. Okonkwo &bull; Robotics Director</div>
+                <button class="btn btn-secondary btn-sm" onclick="openInsightModal('The Convergence of Robotics and Foundation Models', 'Dr. E. Okonkwo', 'For decades, robotics suffered from data starvation. By bridging multimodal vision-language-action (VLA) representations with high-speed 1,000Hz direct joint control, machines can finally generalize physical tasks without millions of manual hours of hand-coded kinematic trajectories.')">Read Brief &rarr;</button>
+              </div>
+            </article>
+
+            <!-- Article 3 -->
+            <article class="glass-card insight-card reveal-on-scroll" data-insight-cat="ethics">
+              <div class="insight-header">
+                <span class="tech-tag">ETHICS & ALIGNMENT</span>
+                <span class="insight-date">JAN 29, 2026 &bull; 7 MIN READ</span>
+              </div>
+              <h3>Ethical Safeguards for Frontier Cognitive Systems</h3>
+              <p>
+                Provable safety bounds and formal Lyapunov verification: why human alignment requires rigorous mathematical proofs rather than subjective policy guidelines.
+              </p>
+              <div class="insight-footer">
+                <div class="insight-author">Dr. R. Tandon &bull; Alignment Fellow</div>
+                <button class="btn btn-secondary btn-sm" onclick="openInsightModal('Ethical Safeguards for Frontier Cognitive Systems', 'Dr. R. Tandon', 'When intelligent systems make real-time decisions in power grids, surgical theatres, or autonomous transit, a probabilistic hedge is unacceptable. We outline our open mathematical verification suite that proves invariant constraints cannot be violated.')">Read Brief &rarr;</button>
+              </div>
+            </article>
+
+            <!-- Article 4 -->
+            <article class="glass-card insight-card reveal-on-scroll" data-insight-cat="research">
+              <div class="insight-header">
+                <span class="tech-tag tech-tag-purple">RESEARCH</span>
+                <span class="insight-date">JAN 15, 2026 &bull; 5 MIN READ</span>
+              </div>
+              <h3>3D Spatial Intelligence: Moving Beyond 2D Computer Vision</h3>
+              <p>
+                Extracting continuous metric Gaussian splats directly from edge sensor streams unlocks real-time physical simulation for autonomous spatial robots.
+              </p>
+              <div class="insight-footer">
+                <div class="insight-author">Dr. S. Chen &bull; Perception Chair</div>
+                <button class="btn btn-secondary btn-sm" onclick="openInsightModal('3D Spatial Intelligence: Moving Beyond 2D Vision', 'Dr. S. Chen', 'Flat pixels discard 90% of physical affordance data. We demonstrate how 3D Gaussian Splatting deployed directly on sub-15W silicon allows machines to understand mass, friction, and volumetric clearance in sub-millisecond cycles.')">Read Brief &rarr;</button>
+              </div>
+            </article>
+
+            <!-- Article 5 -->
+            <article class="glass-card insight-card reveal-on-scroll" data-insight-cat="future-tech">
+              <div class="insight-header">
+                <span class="tech-tag">FUTURE TECH</span>
+                <span class="insight-date">DEC 20, 2025 &bull; 10 MIN READ</span>
+              </div>
+              <h3>Quantum-Tensor Computing: The 2030 Horizon</h3>
+              <p>
+                Evaluating cryogenic tensor network processors and their capacity to accelerate non-convex loss function optimization by four orders of magnitude.
+              </p>
+              <div class="insight-footer">
+                <div class="insight-author">Prof. H. Lindqvist &bull; Fellow</div>
+                <button class="btn btn-secondary btn-sm" onclick="openInsightModal('Quantum-Tensor Computing: The 2030 Horizon', 'Prof. H. Lindqvist', 'Classical silicon approaches physical thermal limits. In this dispatch, we evaluate superconducting quantum tensor networks that contract exponentially vast Hilbert spaces into compute-friendly classical representations.')">Read Brief &rarr;</button>
+              </div>
+            </article>
+
+            <!-- Article 6 -->
+            <article class="glass-card insight-card reveal-on-scroll" data-insight-cat="robotics">
+              <div class="insight-header">
+                <span class="tech-tag tech-tag-purple">ROBOTICS</span>
+                <span class="insight-date">DEC 04, 2025 &bull; 6 MIN READ</span>
+              </div>
+              <h3>Multi-Agent Swarm Intelligence in GPS-Denied Environments</h3>
+              <p>
+                How decentralized peer-to-peer visual inertial odometry allows autonomous drone fleets to coordinate underground mine search operations with zero signal.
+              </p>
+              <div class="insight-footer">
+                <div class="insight-author">K. Morales &bull; Autonomous Systems</div>
+                <button class="btn btn-secondary btn-sm" onclick="openInsightModal('Multi-Agent Swarm Intelligence in GPS-Denied Environments', 'K. Morales', 'Subterranean and extraterrestrial environments offer zero satellite navigation. We break down the mathematical consensus protocol that enables 100+ micro-drones to synthesize a 3D cavern map in real time.')">Read Brief &rarr;</button>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- NEWSLETTER / DISPATCHES SUBSCRIPTION -->
+      <section class="section" id="subscribe" style="background: rgba(4, 7, 15, 0.9);">
+        <div class="container">
+          <div class="glass-card tech-corners reveal-on-scroll" style="max-width: 800px; margin: 0 auto; text-align: center; padding: 48px 32px;">
+            <span class="tech-tag" style="margin-bottom: 16px;">THE NEXA CHRONICLE</span>
+            <h2 style="margin-bottom: 16px;">Subscribe To Technical Dispatches</h2>
+            <p style="color: var(--text-secondary); max-width: 600px; margin: 0 auto 32px; font-size: 1.05rem;">
+              Receive monthly peer-reviewed research updates, open-source repository releases, and commentary directly from our principal researchers.
+            </p>
+
+            <form id="dispatchSubscribeForm" style="display: flex; gap: 12px; max-width: 500px; margin: 0 auto; flex-wrap: wrap;">
+              <input type="email" id="dispatchEmail" placeholder="colleague@institution.edu" required style="flex: 1; min-width: 260px; background: rgba(0,0,0,0.6); border: 1px solid var(--border-subtle); border-radius: 4px; padding: 14px 18px; color: #fff; font-family: var(--font-mono); font-size: 0.9rem;" />
+              <button type="submit" class="btn btn-primary" style="white-space: nowrap;">Join Dispatch &rarr;</button>
+            </form>
+            <div id="dispatchFeedback" style="display: none; margin-top: 16px; font-family: var(--font-mono); font-size: 0.85rem; color: var(--cyan);">
+              // REGISTRATION CONFIRMED. YOU ARE SUBSCRIBED TO THE NEXA DISPATCHES.
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Global Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <a href="index.html" class="logo">
+              <div class="logo-symbol">
+                <svg viewBox="0 0 48 48" fill="none">
+                  <polygon points="24,4 42,14 42,34 24,44 6,34 6,14" stroke="#00f0ff" stroke-width="2" fill="rgba(0, 240, 255, 0.05)" />
+                  <circle cx="24" cy="24" r="6" fill="#00f0ff" />
+                </svg>
+              </div>
+              <span class="logo-text">NEXA <span>AI LAB</span></span>
+            </a>
+            <p><strong>Building the Intelligence of Tomorrow.</strong></p>
+          </div>
+          <div class="footer-col">
+            <h4>Explore</h4>
+            <ul class="footer-links">
+              <li><a href="about.html">About Laboratory</a></li>
+              <li><a href="technologies.html">Core Technologies</a></li>
+              <li><a href="projects.html">Live Projects</a></li>
+              <li><a href="research.html">Research Pipeline</a></li>
+              <li><a href="robotics.html">Robotics Division</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Resources</h4>
+            <ul class="footer-links">
+              <li><a href="insights.html">Laboratory Insights</a></li>
+              <li><a href="research.html#papers">Documentation</a></li>
+              <li><a href="about.html#careers">Careers & Fellowships</a></li>
+              <li><a href="contact.html">Contact Headquarters</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Connect</h4>
+            <p style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 16px;">
+              Future Technology District, Sector 7.<br />
+              Publications: <a href="mailto:hello@nexaailab.com" style="color: var(--cyan);">hello@nexaailab.com</a>
+            </p>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <div>&copy; 2026 NEXA AI LAB. All rights reserved. Precision Neural Systems.</div>
+          <div style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--text-muted);">DISPATCH FEED: SYNDICATED // OPEN ACCESS POLICY</div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Technical Specs Modal -->
+    <div class="modal-backdrop" id="appModalBackdrop" role="dialog" aria-modal="true">
+      <div class="modal-container" id="appModalContainer">
+        <button class="modal-close" id="appModalClose" aria-label="Close dialog">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+        <div id="appModalContent"></div>
+      </div>
+    </div>
+
+    <script src="./script.js" defer></script>
+    <script>
+      // Insights Filter Logic
+      document.querySelectorAll('[data-insight-filter]').forEach(btn => {
+        btn.addEventListener('click', () => {
+          document.querySelectorAll('[data-insight-filter]').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          const filter = btn.getAttribute('data-insight-filter');
+          document.querySelectorAll('[data-insight-cat]').forEach(card => {
+            if (filter === 'all' || card.getAttribute('data-insight-cat') === filter) {
+              card.style.display = 'flex';
+            } else {
+              card.style.display = 'none';
+            }
+          });
+        });
+      });
+
+      // Dispatch Newsletter Submission
+      const form = document.getElementById('dispatchSubscribeForm');
+      if (form) {
+        form.addEventListener('submit', (e) => {
+          e.preventDefault();
+          const email = document.getElementById('dispatchEmail').value;
+          if (email) {
+            document.getElementById('dispatchFeedback').style.display = 'block';
+            form.reset();
+          }
+        });
+      }
+
+      function openInsightModal(title, author, content) {
+        const modalBackdrop = document.getElementById('appModalBackdrop');
+        const modalContent = document.getElementById('appModalContent');
+        if (modalBackdrop && modalContent) {
+          modalContent.innerHTML = `
+            <div style="margin-bottom: 16px;">
+              <span class="tech-tag" style="margin-bottom: 8px;">RESEARCH DISPATCH</span>
+              <h2 style="font-size: 1.6rem; color: #fff; margin-top: 6px;">${title}</h2>
+              <div style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--cyan); margin-top: 6px;">
+                AUTHOR: ${author} // NEXA ADVANCED RESEARCH INITIATIVE
+              </div>
+            </div>
+            <div style="font-size: 1.05rem; line-height: 1.7; color: var(--text-secondary); margin-bottom: 24px;">
+              <p>${content}</p>
+              <p style="margin-top: 16px;">Our team continues to publish open benchmarks and reproducibility checkpoints on GitHub and arXiv. For collaboration inquiries or academic citations, reference our Open Science repository.</p>
+            </div>
+            <div style="display: flex; gap: 12px; border-top: 1px solid var(--border-subtle); padding-top: 16px;">
+              <a href="contact.html?type=research" class="btn btn-primary btn-sm">Contact Research Team &rarr;</a>
+              <button class="btn btn-secondary btn-sm" onclick="document.getElementById('appModalBackdrop').classList.remove('active')">Close</button>
+            </div>
+          `;
+          modalBackdrop.classList.add('active');
+        }
+      }
+    </script>
+  </body>
+</html>

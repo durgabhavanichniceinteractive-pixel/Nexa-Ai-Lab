@@ -1,0 +1,346 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Robotics — NEXA AI LAB | Intelligence in Motion</title>
+    <meta name="description" content="Explore physical artificial intelligence and advanced robotics at NEXA AI LAB — ATLAS humanoid, autonomous manipulation, dynamic balance, and extreme environment rovers." />
+    <meta property="og:title" content="Robotics — NEXA AI LAB" />
+    <meta property="og:description" content="Hardware and neural control systems powering next-generation physical robotics." />
+    <meta property="og:type" content="website" />
+    <meta name="theme-color" content="#030508" />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="cursor-dot"></div>
+    <div class="cursor-ring"></div>
+
+    <!-- Header -->
+    <header class="header" id="mainHeader">
+      <div class="container header-inner">
+        <a href="index.html" class="logo" aria-label="NEXA AI LAB Home">
+          <div class="logo-symbol">
+            <svg viewBox="0 0 48 48" fill="none">
+              <polygon points="24,4 42,14 42,34 24,44 6,34 6,14" stroke="#00f0ff" stroke-width="2" fill="rgba(0, 240, 255, 0.05)" />
+              <circle cx="24" cy="24" r="6" fill="#00f0ff" />
+            </svg>
+          </div>
+          <span class="logo-text">NEXA <span>AI LAB</span></span>
+        </a>
+
+        <nav aria-label="Primary Navigation">
+          <ul class="nav-links">
+            <li><a href="index.html" class="nav-link">Home</a></li>
+            <li><a href="about.html" class="nav-link">About</a></li>
+            <li><a href="technologies.html" class="nav-link">Technologies</a></li>
+            <li><a href="projects.html" class="nav-link">Projects</a></li>
+            <li><a href="research.html" class="nav-link">Research</a></li>
+            <li><a href="robotics.html" class="nav-link active">Robotics</a></li>
+            <li><a href="insights.html" class="nav-link">Insights</a></li>
+            <li><a href="contact.html" class="nav-link">Contact</a></li>
+          </ul>
+        </nav>
+
+        <div class="header-actions">
+          <button id="audioToggleBtn" class="btn btn-secondary btn-sm" aria-pressed="false">SFX: OFF</button>
+          <a href="contact.html?type=robotics" class="btn btn-primary btn-sm">Request Demo &rarr;</a>
+          <button class="hamburger" id="hamburgerBtn" aria-label="Open navigation menu">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Mobile Navigation Drawer -->
+    <div class="mobile-nav-backdrop" id="mobileNavBackdrop"></div>
+    <div class="mobile-nav" id="mobileNav" aria-label="Mobile Navigation">
+      <div class="mobile-nav-header">
+        <div class="mobile-nav-brand">
+          <span class="status-indicator pulse green" style="width: 8px; height: 8px;"></span>
+          <span style="font-family: var(--font-heading); font-size: 0.95rem; letter-spacing: 0.08em;">NEXA <span class="text-gradient">LAB</span></span>
+        </div>
+        <button class="mobile-nav-close" id="mobileNavClose" aria-label="Close mobile navigation menu" type="button">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+          <span>CLOSE</span>
+        </button>
+      </div>
+      <ul class="mobile-links">
+        <li><a href="index.html">01. Home &rarr;</a></li>
+        <li><a href="about.html">02. About &rarr;</a></li>
+        <li><a href="technologies.html">03. Technologies &rarr;</a></li>
+        <li><a href="projects.html">04. Projects &rarr;</a></li>
+        <li><a href="research.html">05. Research &rarr;</a></li>
+        <li><a href="robotics.html" class="active">06. Robotics &rarr;</a></li>
+        <li><a href="insights.html">07. Insights &rarr;</a></li>
+        <li><a href="contact.html">08. Contact &rarr;</a></li>
+      </ul>
+      <div class="mobile-nav-footer">
+        <a href="contact.html" class="btn btn-primary" style="width: 100%;">Connect With Us &rarr;</a>
+      </div>
+    </div>
+
+    <main>
+      <!-- PAGE HERO -->
+      <section class="page-hero">
+        <div class="container">
+          <div class="hero-tag">
+            <span class="tech-tag">PHYSICAL INTELLIGENCE DIVISION</span>
+          </div>
+          <h1 class="hero-title">
+            INTELLIGENCE <br />
+            <span class="text-gradient">IN MOTION</span>
+          </h1>
+          <p class="hero-subtitle">
+            Bridging cognitive machine learning with high-torque compliant mechanics. We build bipedal humanoids, agile quadrupeds, and sub-millimeter robotic manipulators designed to operate alongside humans safely in unpredictable real-world environments.
+          </p>
+        </div>
+      </section>
+
+      <!-- LIVE TELEMETRY SIMULATION FEED -->
+      <section class="section" style="padding-top: 0;">
+        <div class="container">
+          <div class="glass-card tech-corners reveal-on-scroll" style="padding: 24px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; margin-bottom: 16px; border-bottom: 1px solid var(--border-subtle); padding-bottom: 12px;">
+              <div style="display: flex; align-items: center; gap: 12px;">
+                <span class="pulse-indicator"></span>
+                <span style="font-family: var(--font-mono); font-size: 0.85rem; font-weight: 700; color: #fff;">LIVE TEST FEED // ATLAS BIPED PROTO-4</span>
+              </div>
+              <div style="display: flex; gap: 8px;">
+                <button class="filter-btn active" id="btnCamRgb" onclick="switchRoboticsCam('rgb')">OPTICAL RGB</button>
+                <button class="filter-btn" id="btnCamDepth" onclick="switchRoboticsCam('depth')">DEPTH MAP</button>
+                <button class="filter-btn" id="btnCamLidar" onclick="switchRoboticsCam('lidar')">LIDAR CLOUD</button>
+                <button class="filter-btn" id="btnCamThermal" onclick="switchRoboticsCam('thermal')">THERMAL</button>
+              </div>
+            </div>
+
+            <!-- Visual Stream Frame -->
+            <div style="position: relative; width: 100%; height: 440px; border-radius: 6px; overflow: hidden; background: #000;">
+              <img id="roboticsFeedImg" src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=1200&q=80" alt="ATLAS Bipedal Feed" style="width: 100%; height: 100%; object-fit: cover; filter: contrast(1.1);" />
+              
+              <!-- Futuristic HUD Overlays -->
+              <div style="position: absolute; top: 16px; left: 16px; background: rgba(3,5,8,0.85); padding: 8px 14px; border: 1px solid var(--cyan); border-radius: 4px; font-family: var(--font-mono); font-size: 0.75rem; color: var(--cyan);">
+                <div>LOC: ARENA_ALPHA_03</div>
+                <div>YAW: 142.4&deg; | PITCH: -2.1&deg; | ROLL: +0.4&deg;</div>
+                <div id="camModeLabel" style="color: #fff; font-weight: 700; margin-top: 4px;">MODE: 4K HIGH-SPEED OPTICAL</div>
+              </div>
+
+              <div style="position: absolute; bottom: 16px; left: 16px; right: 16px; display: flex; justify-content: space-between; align-items: flex-end; pointer-events: none; font-family: var(--font-mono); font-size: 0.78rem; text-shadow: 0 1px 4px #000;">
+                <div style="background: rgba(3,5,8,0.85); padding: 8px 14px; border-radius: 4px; border: 1px solid var(--border-subtle);">
+                  <div>TORQUE UTILIZATION: <span style="color: var(--cyan);">44.2%</span></div>
+                  <div>GROUND REACTION FORCE: <span style="color: var(--cyan);">782 N</span></div>
+                </div>
+                <div style="background: rgba(3,5,8,0.85); padding: 8px 14px; border-radius: 4px; border: 1px solid var(--border-subtle); text-align: right;">
+                  <div>NEURAL LOOP: <span style="color: var(--emerald);">1,000 Hz LOCKED</span></div>
+                  <div>BATTERY: <span style="color: var(--cyan);">92.4% (4.8h REMAINING)</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- HARDWARE + SOFTWARE ARCHITECTURE -->
+      <section class="section" style="background: rgba(4, 7, 15, 0.7);">
+        <div class="container">
+          <div class="section-header reveal-on-scroll">
+            <span class="tech-tag">HOLISTIC ENGINEERING</span>
+            <h2>HARDWARE + <span class="text-gradient">SOFTWARE</span> HARMONY</h2>
+            <p class="subheading">
+              True physical robotics cannot be solved by software alone. We co-design electric motor windings, titanium-carbon skeletons, and custom neural silicon.
+            </p>
+          </div>
+
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px;" class="reveal-on-scroll">
+            <div class="glass-card tech-corners">
+              <span class="tech-tag" style="margin-bottom: 12px;">ACTUATION</span>
+              <h3>High-Torque Quasi-Direct Drives</h3>
+              <p style="margin-top: 8px;">
+                Low-inertia planetary gearboxes paired with planar brushless motors provide transparent back-drivability. The robot can absorb high-energy shocks and feel external contact passively.
+              </p>
+            </div>
+
+            <div class="glass-card tech-corners">
+              <span class="tech-tag tech-tag-purple" style="margin-bottom: 12px;">NAVIGATION</span>
+              <h3>Multi-Spectral Solid-State SLAM</h3>
+              <p style="margin-top: 8px;">
+                Combining 360-degree high-density solid-state LiDAR, dual 120 FPS event cameras, and tactical-grade IMUs to generate real-time metric occupancy grids without satellite connectivity.
+              </p>
+            </div>
+
+            <div class="glass-card tech-corners">
+              <span class="tech-tag" style="margin-bottom: 12px;">MANIPULATION</span>
+              <h3>Tactile-Array Dexterity</h3>
+              <p style="margin-top: 8px;">
+                20-degree-of-freedom robotic hands embedded with micro-piezoelectric shear sensors capable of catching a fragile egg, threading needles, or wielding heavy construction wrenches.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TECHNICAL SPECIFICATION MATRIX -->
+      <section class="section">
+        <div class="container">
+          <div class="section-header center reveal-on-scroll">
+            <span class="tech-tag tech-tag-purple">BENCHMARK SPECIFICATIONS</span>
+            <h2>ATLAS SYSTEM <span class="text-gradient">METRICS</span></h2>
+            <p class="subheading">Technical specifications of our latest autonomous humanoid chassis.</p>
+          </div>
+
+          <div class="specs-grid reveal-on-scroll">
+            <div class="spec-card">
+              <div class="spec-val">1.78m</div>
+              <div class="spec-lbl">HUMANOID STATURE</div>
+            </div>
+            <div class="spec-card">
+              <div class="spec-val">68 kg</div>
+              <div class="spec-lbl">CARBON-TITANIUM MASS</div>
+            </div>
+            <div class="spec-card">
+              <div class="spec-val">32 DOF</div>
+              <div class="spec-lbl">WHOLE-BODY ARTICULATION</div>
+            </div>
+            <div class="spec-card">
+              <div class="spec-val">380 N&middot;m</div>
+              <div class="spec-lbl">PEAK JOINT TORQUE</div>
+            </div>
+            <div class="spec-card">
+              <div class="spec-val">1,000 Hz</div>
+              <div class="spec-lbl">NEURAL CONTROL SERVO</div>
+            </div>
+            <div class="spec-card">
+              <div class="spec-val">6.5 Hrs</div>
+              <div class="spec-lbl">CONTINUOUS BATTERY RUNTIME</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- REAL-WORLD APPLICATIONS -->
+      <section class="section" style="background: rgba(4, 7, 15, 0.8);">
+        <div class="container">
+          <div class="section-header center reveal-on-scroll">
+            <span class="tech-tag">DEPLOYMENT SCENARIOS</span>
+            <h2>WHERE OUR ROBOTS <span class="text-gradient">OPERATE</span></h2>
+            <p class="subheading">Targeted mission profiles engineered for human safety and industrial resilience.</p>
+          </div>
+
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px;" class="reveal-on-scroll">
+            <div class="glass-card">
+              <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80" alt="Search and Rescue" style="width: 100%; height: 160px; object-fit: cover; border-radius: 6px; margin-bottom: 16px;" loading="lazy" />
+              <h3>Search & Rescue</h3>
+              <p style="font-size: 0.9rem;">Navigating collapsed structures, toxic plumes, and extreme earthquakes where human first responders face lethal hazard.</p>
+            </div>
+
+            <div class="glass-card">
+              <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=600&q=80" alt="Critical Infrastructure Inspection" style="width: 100%; height: 160px; object-fit: cover; border-radius: 6px; margin-bottom: 16px;" loading="lazy" />
+              <h3>Nuclear & Energy Inspection</h3>
+              <p style="font-size: 0.9rem;">Autonomous ultrasonic non-destructive testing inside active radiation vaults, high-voltage transformer yards, and pipelines.</p>
+            </div>
+
+            <div class="glass-card">
+              <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=600&q=80" alt="Space Exploration" style="width: 100%; height: 160px; object-fit: cover; border-radius: 6px; margin-bottom: 16px;" loading="lazy" />
+              <h3>Planetary & Lunar Proving</h3>
+              <p style="font-size: 0.9rem;">Regolith excavation, orbital solar array deployment, and radiation-shielded habitat assembly under vacuum conditions.</p>
+            </div>
+
+            <div class="glass-card">
+              <img src="https://images.unsplash.com/photo-1507146426996-ef05306b995a?auto=format&fit=crop&w=600&q=80" alt="Surgical Assistance" style="width: 100%; height: 160px; object-fit: cover; border-radius: 6px; margin-bottom: 16px;" loading="lazy" />
+              <h3>Precision Bio-Manipulation</h3>
+              <p style="font-size: 0.9rem;">Sub-micron tremor-canceled teleoperation aiding micro-vascular surgery and automated bio-reactor cellular culture sampling.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Global Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <a href="index.html" class="logo">
+              <div class="logo-symbol">
+                <svg viewBox="0 0 48 48" fill="none">
+                  <polygon points="24,4 42,14 42,34 24,44 6,34 6,14" stroke="#00f0ff" stroke-width="2" fill="rgba(0, 240, 255, 0.05)" />
+                  <circle cx="24" cy="24" r="6" fill="#00f0ff" />
+                </svg>
+              </div>
+              <span class="logo-text">NEXA <span>AI LAB</span></span>
+            </a>
+            <p><strong>Building the Intelligence of Tomorrow.</strong></p>
+          </div>
+          <div class="footer-col">
+            <h4>Explore</h4>
+            <ul class="footer-links">
+              <li><a href="about.html">About Laboratory</a></li>
+              <li><a href="technologies.html">Core Technologies</a></li>
+              <li><a href="projects.html">Live Projects</a></li>
+              <li><a href="research.html">Research Pipeline</a></li>
+              <li><a href="robotics.html">Robotics Division</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Resources</h4>
+            <ul class="footer-links">
+              <li><a href="insights.html">Laboratory Insights</a></li>
+              <li><a href="research.html#papers">Documentation</a></li>
+              <li><a href="about.html#careers">Careers & Fellowships</a></li>
+              <li><a href="contact.html">Contact Headquarters</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Connect</h4>
+            <p style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 16px;">
+              Future Technology District, Sector 7.<br />
+              Robotics Inquiries: <a href="mailto:hello@nexaailab.com" style="color: var(--cyan);">hello@nexaailab.com</a>
+            </p>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <div>&copy; 2026 NEXA AI LAB. All rights reserved. Precision Neural Systems.</div>
+          <div style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--text-muted);">FLEET STATUS: ACTIVE // 1,000Hz SERVO SYNCHRONIZED</div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="./script.js" defer></script>
+    <script>
+      function switchRoboticsCam(mode) {
+        const img = document.getElementById('roboticsFeedImg');
+        const label = document.getElementById('camModeLabel');
+        const btnRgb = document.getElementById('btnCamRgb');
+        const btnDepth = document.getElementById('btnCamDepth');
+        const btnLidar = document.getElementById('btnCamLidar');
+        const btnThermal = document.getElementById('btnCamThermal');
+        
+        [btnRgb, btnDepth, btnLidar, btnThermal].forEach(b => b.classList.remove('active'));
+
+        if (mode === 'rgb') {
+          img.src = "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=1200&q=80";
+          img.style.filter = "contrast(1.1)";
+          label.textContent = "MODE: 4K HIGH-SPEED OPTICAL";
+          btnRgb.classList.add('active');
+        } else if (mode === 'depth') {
+          img.src = "https://images.unsplash.com/photo-1507146426996-ef05306b995a?auto=format&fit=crop&w=1200&q=80";
+          img.style.filter = "hue-rotate(180deg) contrast(1.4)";
+          label.textContent = "MODE: DENSE NEURAL DEPTH FIELD (Z-BUFFER)";
+          btnDepth.classList.add('active');
+        } else if (mode === 'lidar') {
+          img.src = "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80";
+          img.style.filter = "invert(0.9) hue-rotate(90deg) contrast(1.5)";
+          label.textContent = "MODE: SOLID-STATE LIDAR VOXEL POINT CLOUD";
+          btnLidar.classList.add('active');
+        } else if (mode === 'thermal') {
+          img.src = "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80";
+          img.style.filter = "sepia(1) saturate(3) hue-rotate(320deg)";
+          label.textContent = "MODE: MULTI-BAND THERMAL RADIOMETRIC SENSOR";
+          btnThermal.classList.add('active');
+        }
+      }
+    </script>
+  </body>
+</html>
