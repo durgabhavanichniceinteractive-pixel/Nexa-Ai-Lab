@@ -1,0 +1,318 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact — NEXA AI LAB | Connect with the Lab</title>
+    <meta name="description" content="Initiate transmission with NEXA AI LAB. Inquire about research partnerships, academic fellowships, robotics trials, or executive briefings." />
+    <meta property="og:title" content="Contact — NEXA AI LAB" />
+    <meta property="og:description" content="Connect directly with researchers and directors at NEXA AI LAB headquarters." />
+    <meta property="og:type" content="website" />
+    <meta name="theme-color" content="#030508" />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="cursor-dot"></div>
+    <div class="cursor-ring"></div>
+
+    <!-- Header -->
+    <header class="header" id="mainHeader">
+      <div class="container header-inner">
+        <a href="index.html" class="logo" aria-label="NEXA AI LAB Home">
+          <div class="logo-symbol">
+            <svg viewBox="0 0 48 48" fill="none">
+              <polygon points="24,4 42,14 42,34 24,44 6,34 6,14" stroke="#00f0ff" stroke-width="2" fill="rgba(0, 240, 255, 0.05)" />
+              <circle cx="24" cy="24" r="6" fill="#00f0ff" />
+            </svg>
+          </div>
+          <span class="logo-text">NEXA <span>AI LAB</span></span>
+        </a>
+
+        <nav aria-label="Primary Navigation">
+          <ul class="nav-links">
+            <li><a href="index.html" class="nav-link">Home</a></li>
+            <li><a href="about.html" class="nav-link">About</a></li>
+            <li><a href="technologies.html" class="nav-link">Technologies</a></li>
+            <li><a href="projects.html" class="nav-link">Projects</a></li>
+            <li><a href="research.html" class="nav-link">Research</a></li>
+            <li><a href="robotics.html" class="nav-link">Robotics</a></li>
+            <li><a href="insights.html" class="nav-link">Insights</a></li>
+            <li><a href="contact.html" class="nav-link active">Contact</a></li>
+          </ul>
+        </nav>
+
+        <div class="header-actions">
+          <button id="audioToggleBtn" class="btn btn-secondary btn-sm" aria-pressed="false">SFX: OFF</button>
+          <a href="research.html" class="btn btn-primary btn-sm">Explore AI &rarr;</a>
+          <button class="hamburger" id="hamburgerBtn" aria-label="Open navigation menu">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Mobile Navigation Drawer -->
+    <div class="mobile-nav-backdrop" id="mobileNavBackdrop"></div>
+    <div class="mobile-nav" id="mobileNav" aria-label="Mobile Navigation">
+      <div class="mobile-nav-header">
+        <div class="mobile-nav-brand">
+          <span class="status-indicator pulse green" style="width: 8px; height: 8px;"></span>
+          <span style="font-family: var(--font-heading); font-size: 0.95rem; letter-spacing: 0.08em;">NEXA <span class="text-gradient">LAB</span></span>
+        </div>
+        <button class="mobile-nav-close" id="mobileNavClose" aria-label="Close mobile navigation menu" type="button">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+          <span>CLOSE</span>
+        </button>
+      </div>
+      <ul class="mobile-links">
+        <li><a href="index.html">01. Home &rarr;</a></li>
+        <li><a href="about.html">02. About &rarr;</a></li>
+        <li><a href="technologies.html">03. Technologies &rarr;</a></li>
+        <li><a href="projects.html">04. Projects &rarr;</a></li>
+        <li><a href="research.html">05. Research &rarr;</a></li>
+        <li><a href="robotics.html">06. Robotics &rarr;</a></li>
+        <li><a href="insights.html">07. Insights &rarr;</a></li>
+        <li><a href="contact.html" class="active">08. Contact &rarr;</a></li>
+      </ul>
+      <div class="mobile-nav-footer">
+        <a href="contact.html" class="btn btn-primary" style="width: 100%;">Connect With Us &rarr;</a>
+      </div>
+    </div>
+
+    <main>
+      <!-- PAGE HERO -->
+      <section class="page-hero">
+        <div class="container">
+          <div class="hero-tag">
+            <span class="tech-tag">TRANSMISSION TERMINAL</span>
+          </div>
+          <h1 class="hero-title">
+            CONNECT WITH <br />
+            <span class="text-gradient">THE LAB</span>
+          </h1>
+          <p class="hero-subtitle">
+            Whether you are exploring academic fellowships, institutional research partnerships, or seeking to integrate NEXA robotic technologies, our team responds to encrypted inquiries globally.
+          </p>
+        </div>
+      </section>
+
+      <!-- MAIN CONTACT SECTION -->
+      <section class="section" style="padding-top: 0;">
+        <div class="container">
+          <div class="contact-grid">
+            <!-- Contact Form -->
+            <div class="glass-card tech-corners reveal-on-scroll">
+              <span class="tech-tag" style="margin-bottom: 16px;">DISPATCH ENCRYPTED PACKET</span>
+              <h2 style="font-size: 1.8rem; margin-bottom: 8px;">Transmit A Message</h2>
+              <p style="font-size: 0.95rem; margin-bottom: 24px;">All transmissions are routed through our priority research triage terminal.</p>
+
+              <form id="labTransmissionForm">
+                <div class="form-group">
+                  <label for="contactName" class="form-label">FULL NAME / CALLSIGN *</label>
+                  <input type="text" id="contactName" class="form-input" placeholder="e.g. Dr. Elena Rostova" required />
+                </div>
+
+                <div class="form-group">
+                  <label for="contactEmail" class="form-label">OFFICIAL EMAIL *</label>
+                  <input type="email" id="contactEmail" class="form-input" placeholder="e.g. e.rostova@institute.org" required />
+                </div>
+
+                <div class="form-group">
+                  <label for="contactOrg" class="form-label">ORGANIZATION / INSTITUTION</label>
+                  <input type="text" id="contactOrg" class="form-input" placeholder="e.g. Stanford AI Lab / Autonomous Dynamics Corp" />
+                </div>
+
+                <div class="form-group">
+                  <label for="contactType" class="form-label">INQUIRY CATEGORY *</label>
+                  <select id="contactType" class="form-select" required>
+                    <option value="research">Research Collaboration & Grants</option>
+                    <option value="robotics">Robotics Demonstration & Integration</option>
+                    <option value="fellowship">Research Fellowship & Careers</option>
+                    <option value="enterprise">Enterprise Deployment of NEXA Vision</option>
+                    <option value="media">Media & Keynote Presentation</option>
+                    <option value="other">General Scientific Inquiry</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="contactMessage" class="form-label">TRANSMISSION PAYLOAD *</label>
+                  <textarea id="contactMessage" class="form-textarea" placeholder="Detail your project specifications, research abstract, or partnership proposal..." required></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary" id="btnSubmitTransmission" style="width: 100%; justify-content: center;">
+                  SEND TRANSMISSION &rarr;
+                </button>
+              </form>
+
+              <!-- Transmission Success Card -->
+              <div id="transmissionSuccessCard" style="display: none; margin-top: 24px; padding: 24px; background: rgba(0, 240, 255, 0.05); border: 1px solid var(--cyan); border-radius: 6px;" class="tech-corners">
+                <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
+                  <span class="pulse-indicator"></span>
+                  <strong style="color: var(--cyan); font-family: var(--font-mono); font-size: 0.95rem;">TRANSMISSION LOGGED SUCCESSFULLY</strong>
+                </div>
+                <p style="font-size: 0.92rem; color: #fff;">
+                  Packet hash: <code style="color: var(--cyan); font-family: var(--font-mono);" id="hashDisplay">0x7F9A1B...</code> has been routed to the relevant research division. A lead investigator will reply within 24 standard hours.
+                </p>
+              </div>
+            </div>
+
+            <!-- Laboratory Contact Info & Holographic Map -->
+            <div style="display: flex; flex-direction: column; gap: 24px;" class="reveal-on-scroll">
+              <div class="glass-card tech-corners">
+                <span class="tech-tag tech-tag-purple" style="margin-bottom: 16px;">PHYSICAL HEADQUARTERS</span>
+                <h3 style="font-size: 1.4rem; margin-bottom: 16px;">Global Facility</h3>
+                
+                <div style="display: flex; flex-direction: column; gap: 16px; font-size: 0.95rem;">
+                  <div>
+                    <strong style="color: var(--cyan); font-family: var(--font-mono); font-size: 0.8rem; display: block; margin-bottom: 4px;">FACILITY LOCATION</strong>
+                    <div>Future Technology District, Sector 7</div>
+                    <div style="color: var(--text-muted);">Cybernetics Way, Building 404-X</div>
+                  </div>
+
+                  <div>
+                    <strong style="color: var(--cyan); font-family: var(--font-mono); font-size: 0.8rem; display: block; margin-bottom: 4px;">SECURE DIGITAL TRANSMISSION</strong>
+                    <a href="mailto:hello@nexaailab.com" style="color: #fff; font-family: var(--font-mono);">hello@nexaailab.com</a>
+                  </div>
+
+                  <div>
+                    <strong style="color: var(--cyan); font-family: var(--font-mono); font-size: 0.8rem; display: block; margin-bottom: 4px;">TELEMETRY FREQUENCY & HOTLINE</strong>
+                    <div style="font-family: var(--font-mono);">+1 (800) 555-NEXA [6392]</div>
+                  </div>
+
+                  <div>
+                    <strong style="color: var(--cyan); font-family: var(--font-mono); font-size: 0.8rem; display: block; margin-bottom: 4px;">LABORATORY SCHEDULE</strong>
+                    <div style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--text-secondary);">
+                      SYNCHRONIZED WITH UTC // RESEARCH CORES ACTIVE 24/7/365
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Interactive Radar / Coordinates Visualization -->
+              <div class="glass-card tech-corners" style="text-align: center; padding: 24px;">
+                <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--cyan); margin-bottom: 12px; display: flex; justify-content: space-between;">
+                  <span>COORDINATES: 37.7749&deg; N, 122.4194&deg; W</span>
+                  <span style="color: var(--emerald);">BEACON ACTIVE</span>
+                </div>
+
+                <div style="position: relative; width: 100%; height: 220px; background: #03060c; border: 1px solid var(--border-subtle); border-radius: 6px; overflow: hidden; display: flex; align-items: center; justify-content: center;">
+                  <!-- Radar Rings -->
+                  <div style="position: absolute; width: 180px; height: 180px; border: 1px dashed rgba(0,240,255,0.25); border-radius: 50%;"></div>
+                  <div style="position: absolute; width: 120px; height: 120px; border: 1px solid rgba(0,240,255,0.4); border-radius: 50%;"></div>
+                  <div style="position: absolute; width: 60px; height: 60px; border: 1px solid rgba(0,240,255,0.6); border-radius: 50%;"></div>
+
+                  <!-- Axis lines -->
+                  <div style="position: absolute; width: 100%; height: 1px; background: rgba(0,240,255,0.15);"></div>
+                  <div style="position: absolute; height: 100%; width: 1px; background: rgba(0,240,255,0.15);"></div>
+
+                  <!-- Center beacon -->
+                  <div style="position: relative; z-index: 2; display: flex; flex-direction: column; align-items: center; gap: 6px;">
+                    <div class="pulse-indicator"></div>
+                    <span style="font-family: var(--font-mono); font-size: 0.75rem; color: #fff; background: rgba(0,0,0,0.8); padding: 2px 8px; border-radius: 3px; border: 1px solid var(--cyan);">NEXA LAB HQ</span>
+                  </div>
+                </div>
+
+                <div style="margin-top: 16px; display: flex; justify-content: center; gap: 16px;">
+                  <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">Open Planetary Coordinates &rarr;</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Global Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <a href="index.html" class="logo">
+              <div class="logo-symbol">
+                <svg viewBox="0 0 48 48" fill="none">
+                  <polygon points="24,4 42,14 42,34 24,44 6,34 6,14" stroke="#00f0ff" stroke-width="2" fill="rgba(0, 240, 255, 0.05)" />
+                  <circle cx="24" cy="24" r="6" fill="#00f0ff" />
+                </svg>
+              </div>
+              <span class="logo-text">NEXA <span>AI LAB</span></span>
+            </a>
+            <p><strong>Building the Intelligence of Tomorrow.</strong></p>
+          </div>
+          <div class="footer-col">
+            <h4>Explore</h4>
+            <ul class="footer-links">
+              <li><a href="about.html">About Laboratory</a></li>
+              <li><a href="technologies.html">Core Technologies</a></li>
+              <li><a href="projects.html">Live Projects</a></li>
+              <li><a href="research.html">Research Pipeline</a></li>
+              <li><a href="robotics.html">Robotics Division</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Resources</h4>
+            <ul class="footer-links">
+              <li><a href="insights.html">Laboratory Insights</a></li>
+              <li><a href="research.html#papers">Documentation</a></li>
+              <li><a href="about.html#careers">Careers & Fellowships</a></li>
+              <li><a href="contact.html">Contact Headquarters</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Connect</h4>
+            <p style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 16px;">
+              Future Technology District, Sector 7.<br />
+              Direct PGP: <a href="mailto:hello@nexaailab.com" style="color: var(--cyan);">hello@nexaailab.com</a>
+            </p>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <div>&copy; 2026 NEXA AI LAB. All rights reserved. Precision Neural Systems.</div>
+          <div style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--text-muted);">PGP FINGERPRINT: 4A7B 89CF 012E D482 // ENCRYPTION AES-GCM-256</div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="./script.js" defer></script>
+    <script>
+      // Support pre-selecting category from URL param (e.g. ?type=fellowship)
+      const urlParams = new URLSearchParams(window.location.search);
+      const inquiryType = urlParams.get('type');
+      if (inquiryType) {
+        const select = document.getElementById('contactType');
+        if (select) {
+          for (let i = 0; i < select.options.length; i++) {
+            if (select.options[i].value.includes(inquiryType)) {
+              select.selectedIndex = i;
+              break;
+            }
+          }
+        }
+      }
+
+      // Handle Form Submit
+      const form = document.getElementById('labTransmissionForm');
+      const submitBtn = document.getElementById('btnSubmitTransmission');
+      const successCard = document.getElementById('transmissionSuccessCard');
+      const hashDisplay = document.getElementById('hashDisplay');
+
+      if (form) {
+        form.addEventListener('submit', (e) => {
+          e.preventDefault();
+          submitBtn.disabled = true;
+          submitBtn.textContent = 'ENCRYPTING & TRANSMITTING...';
+
+          setTimeout(() => {
+            submitBtn.style.display = 'none';
+            successCard.style.display = 'block';
+            const randomHex = '0x' + Array.from({length: 12}, () => Math.floor(Math.random() * 16).toString(16)).join('').toUpperCase();
+            hashDisplay.textContent = randomHex;
+            form.reset();
+          }, 900);
+        });
+      }
+    </script>
+  </body>
+</html>
