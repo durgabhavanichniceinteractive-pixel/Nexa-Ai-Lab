@@ -59,6 +59,8 @@ html {
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  width: 100%;
 }
 
 body {
@@ -67,6 +69,18 @@ body {
   min-height: 100vh;
   position: relative;
   overflow-x: hidden;
+  width: 100%;
+  max-width: 100vw;
+}
+
+main {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+img, canvas, video, svg {
+  max-width: 100%;
+  height: auto;
 }
 
 /* Technical grid background */
@@ -268,13 +282,12 @@ a {
 }
 
 .section {
-  padding-top: 30px;
-  padding-bottom:30px;
+  padding-top: clamp(70px, 10vw, 120px);
+  padding-bottom: clamp(70px, 10vw, 120px);
   position: relative;
   z-index: 2;
 }
-section#genai{  padding-top: clamp(70px, 10vw, 60px);}
-section#agents{padding-bottom: 60px;}
+
 .section-header {
   margin-bottom: clamp(40px, 6vw, 64px);
   max-width: 780px;
@@ -1719,7 +1732,10 @@ section#agents{padding-bottom: 60px;}
   letter-spacing: 0.02em;
 }
 
-.form-control {
+.form-control,
+.form-input,
+.form-select,
+.form-textarea {
   width: 100%;
   padding: 14px 18px;
   background: rgba(8, 14, 28, 0.7);
@@ -1730,17 +1746,84 @@ section#agents{padding-bottom: 60px;}
   font-size: 0.95rem;
   transition: var(--transition-smooth);
   outline: none;
+  box-sizing: border-box;
 }
 
-.form-control:focus {
+.form-select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2300f0ff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  background-size: 16px;
+  padding-right: 40px;
+}
+
+.form-select option {
+  background: #060b18;
+  color: #ffffff;
+}
+
+.form-control:focus,
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
   border-color: var(--cyan);
   box-shadow: 0 0 18px rgba(0, 240, 255, 0.25);
   background: rgba(10, 18, 36, 0.9);
 }
 
-textarea.form-control {
+textarea.form-control,
+.form-textarea {
   resize: vertical;
   min-height: 140px;
+}
+
+/* Section Layout Grids */
+.insights-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 28px;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 36px;
+  align-items: start;
+}
+
+.about-mission-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+}
+
+.about-facilities-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.about-explore-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.tech-domain-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.research-meta-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  color: var(--text-secondary);
 }
 
 /* ==========================================================================
@@ -2435,36 +2518,194 @@ textarea.form-control {
 }
 
 /* ==========================================================================
-   RESPONSIVE QUERIES
+   RESPONSIVE QUERIES & BREAKPOINTS
    ========================================================================== */
 
+/* --------------------------------------------------------------------------
+   LARGE DESKTOP (1440px - 1600px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 1600px) {
+  .container {
+    max-width: 1320px;
+  }
+}
+
+@media (max-width: 1440px) {
+  .container {
+    max-width: 1240px;
+  }
+  .nav-links {
+    gap: 24px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   DESKTOP & TRANSITION RANGE (1200px - 1240px)
+   Addresses critical layout overflow, header collision, and grid breakages
+   -------------------------------------------------------------------------- */
+@media (max-width: 1240px) {
+  .container {
+    max-width: 1140px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  /* Header Optimization */
+  .header-inner {
+    gap: 16px;
+  }
+  .nav-links {
+    gap: 16px;
+  }
+  .nav-link {
+    font-size: 0.85rem;
+    padding: 4px 0;
+  }
+  .header-actions {
+    gap: 8px;
+  }
+  .header-actions .btn-sm {
+    padding: 8px 14px;
+    font-size: 0.82rem;
+  }
+  .header-status-pill {
+    padding: 5px 10px;
+    font-size: 0.72rem;
+  }
+
+  /* Hero Section */
+  .hero-layout {
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 32px;
+  }
+  .hero-visual-stage {
+    height: 480px;
+  }
+
+  /* Status Panel (Prevent 4-column squeeze) */
+  .status-panel {
+    gap: 12px;
+    padding: 18px 20px;
+  }
+  .status-item {
+    padding: 10px 12px;
+    gap: 8px;
+  }
+  .status-label {
+    font-size: 0.68rem;
+  }
+  .status-val {
+    font-size: 0.84rem;
+  }
+
+  /* Future Lab */
+  .future-lab-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+  }
+  .lab-panel {
+    min-height: 360px;
+    padding: 24px 20px;
+  }
+
+  /* Grids */
+  .tech-grid {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 24px;
+  }
+  .projects-grid {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 24px;
+  }
+  .insights-grid {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 24px;
+  }
+  .capabilities-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+  }
+  .footer-grid {
+    grid-template-columns: 1.4fr 1fr 1fr 1.2fr;
+    gap: 30px;
+  }
+  .contact-grid {
+    gap: 28px;
+  }
+
+  /* Inline grid overrides for 1240px transition */
+  [style*="minmax(320px"] {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
+    gap: 24px !important;
+  }
+}
+
+@media (max-width: 1200px) {
+  /* Extra safeguard for exact 1200px viewport edge-cases */
+  .nav-links {
+    gap: 12px;
+  }
+  .nav-link {
+    font-size: 0.82rem;
+  }
+  .header-actions .btn-secondary {
+    display: none;
+  }
+  .hero-layout {
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+  }
+  .hero-visual-stage {
+    height: 440px;
+  }
+  .status-panel {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+  .research-horizontal-pipeline {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   MEDIUM DESKTOP & TABLETS LANDSCAPE (1024px)
+   -------------------------------------------------------------------------- */
 @media (max-width: 1024px) {
-  .nav-links, .header-actions .btn {
+  .nav-links,
+  .header-actions .btn {
     display: none;
   }
   .hamburger {
     display: flex;
   }
+
+  /* Hero Section Stack */
   .hero-layout {
     grid-template-columns: 1fr;
     gap: 36px;
   }
   .hero-visual-stage {
     height: 420px;
+    max-width: 650px;
+    margin: 0 auto;
+    width: 100%;
   }
+
+  /* Future Lab */
   .future-lab-layout {
     grid-template-columns: 1fr;
     gap: 28px;
   }
-  .research-horizontal-pipeline {
-    grid-template-columns: repeat(2, 1fr);
-  }
   .future-lab-container {
     grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
   }
-  .footer-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 36px;
+
+  /* Research */
+  .research-horizontal-pipeline {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
   }
   .pipeline-track {
     flex-direction: column;
@@ -2477,15 +2718,207 @@ textarea.form-control {
     height: 90%;
     transform: translateX(-50%);
   }
+
+  /* Grids & Cards */
+  .tech-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+  }
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+  }
+  .insights-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+  }
+  .capabilities-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  .about-facilities-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  .tech-domain-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  /* Status Panel & Footer */
+  .status-panel {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 36px;
+  }
 }
 
-@media (max-width: 768px) {
+/* --------------------------------------------------------------------------
+   TABLETS PORTRAIT & SMALL LAPTOPS (991px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 991px) {
+  .container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .section {
+    padding-top: clamp(60px, 8vw, 90px);
+    padding-bottom: clamp(60px, 8vw, 90px);
+  }
+  .page-hero {
+    padding-top: calc(var(--nav-height) + 50px);
+    padding-bottom: 50px;
+  }
+
   .hero-visual-stage {
-    height: 340px;
+    height: 380px;
   }
-  .research-horizontal-pipeline {
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .console-wrapper {
+    margin-top: 36px;
+  }
+  .console-body {
+    padding: 24px;
+  }
+
+  .robotics-viewport {
+    height: 380px;
+  }
+
+  /* Inline grid overrides for 991px tablet stack */
+  [style*="minmax(320px"],
+  [style*="minmax(300px"] {
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   LARGE MOBILE & MOBILE LANDSCAPE (767px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 767px) {
+  /* Typography Scale */
+  h1 {
+    font-size: clamp(2rem, 6.5vw, 2.75rem);
+  }
+  h2 {
+    font-size: clamp(1.6rem, 5vw, 2.2rem);
+  }
+  h3 {
+    font-size: clamp(1.2rem, 4vw, 1.5rem);
+  }
+
+  /* Header & Mobile Drawer */
+  .header-status-pill span.status-text-full {
+    display: none;
+  }
+  .mobile-nav {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  /* Hero Section */
+  .hero {
+    padding-top: calc(var(--nav-height) + 24px);
+    padding-bottom: 40px;
+    min-height: auto;
+  }
+  .hero-cta {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+  .hero-cta .btn {
+    width: 100%;
+    text-align: center;
+  }
+  .hero-visual-stage {
+    height: 320px;
+  }
+  .hero-hud-badge {
+    padding: 4px 8px;
+    font-size: 0.68rem;
+  }
+  .hero-hud-badge-tr {
+    display: none;
+  }
+
+  /* Status Panel */
+  .status-panel-section-wrap {
+    margin-top: 32px;
+  }
+  .status-panel {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    padding: 16px;
+  }
+  .status-item {
+    padding: 10px;
+  }
+
+  /* Grids & Panels */
+  .future-lab-container {
     grid-template-columns: 1fr;
+    gap: 16px;
   }
+  .lab-panel {
+    min-height: auto;
+    padding: 22px 18px;
+  }
+  .tech-grid,
+  .projects-grid,
+  .insights-grid,
+  .capabilities-grid,
+  .research-horizontal-pipeline,
+  .about-mission-grid,
+  .about-facilities-grid,
+  .about-explore-grid,
+  .tech-domain-grid,
+  .research-meta-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  /* Safe fallback for inline minmax grids */
+  [style*="minmax(320px"],
+  [style*="minmax(300px"],
+  [style*="minmax(280px"] {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+
+  /* Project Card */
+  .project-footer {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  /* Robotics Viewport */
+  .robotics-viewport {
+    height: 320px;
+  }
+  .robot-model-img {
+    max-height: 270px;
+  }
+  .hud-node {
+    position: static;
+    margin-bottom: 8px;
+    width: 100%;
+  }
+
+  /* Timeline */
   .timeline-container::before {
     left: 20px;
   }
@@ -2500,16 +2933,240 @@ textarea.form-control {
     left: 13px !important;
     right: auto !important;
   }
-  .future-lab-container {
-    grid-template-columns: 1fr;
+
+  /* Console & Terminal */
+  .console-wrapper {
+    margin-top: 28px;
+  }
+  .console-header {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 16px;
+  }
+  .console-title {
+    font-size: 0.72rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 65%;
+  }
+  .console-body {
+    padding: 18px 14px;
+    font-size: 0.85rem;
+  }
+  .console-actions {
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+  }
+  .console-actions .btn {
+    width: 100%;
+  }
+
+  /* Cards & Modal */
+  .glass-card {
+    padding: 22px 18px;
+  }
+  .modal-container {
+    padding: 24px 18px;
+  }
+  .modal-backdrop {
+    padding: 16px;
+  }
+
+  /* Footer */
+  .footer {
+    padding-top: 60px;
+    padding-bottom: 32px;
   }
   .footer-grid {
     grid-template-columns: 1fr;
+    gap: 32px;
   }
-  .tech-grid, .projects-grid, .capabilities-grid {
+  .footer-bottom {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 12px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   STANDARD MOBILE (480px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 480px) {
+  .container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  .section {
+    padding-top: 54px;
+    padding-bottom: 54px;
+  }
+  .page-hero {
+    padding-top: calc(var(--nav-height) + 24px);
+    padding-bottom: 36px;
+  }
+
+  /* Buttons */
+  .btn {
+    padding: 12px 20px;
+    font-size: 0.88rem;
+    gap: 8px;
+  }
+
+  /* Status Panel: Single Column for Clean Metrics */
+  .status-panel {
     grid-template-columns: 1fr;
+    gap: 10px;
+    padding: 14px;
   }
-  .header-status-pill span.status-text-full {
+
+  /* Stats Grid */
+  .stats-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+  .stat-card {
+    padding: 18px 12px;
+  }
+  .stat-number {
+    font-size: 2.1rem;
+  }
+
+  /* Hero Stage */
+  .hero-visual-stage {
+    height: 280px;
+  }
+  .hero-hud-badge-bl {
     display: none;
+  }
+
+  /* Filter Tabs */
+  .filter-tabs {
+    gap: 6px;
+    margin-bottom: 24px;
+  }
+  .filter-btn {
+    padding: 6px 12px;
+    font-size: 0.75rem;
+  }
+
+  /* Console */
+  .console-body {
+    padding: 16px 12px;
+    font-size: 0.8rem;
+  }
+  .console-input-row {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .console-input {
+    width: 100%;
+    min-width: 0;
+  }
+
+  /* AI Terminal */
+  .ai-core-terminal {
+    padding: 18px 14px;
+  }
+  .terminal-metrics-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  .terminal-response-container {
+    padding: 14px 12px;
+  }
+  .terminal-response-text {
+    font-size: 0.88rem;
+  }
+
+  /* Modal */
+  .modal-container {
+    padding: 20px 14px;
+  }
+
+  [style*="minmax(240px"],
+  [style*="minmax(200px"] {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   SMALL MOBILE (360px down to 320px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 360px) {
+  .container {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  /* Typography */
+  h1 {
+    font-size: 1.8rem;
+  }
+  h2 {
+    font-size: 1.45rem;
+  }
+  h3 {
+    font-size: 1.15rem;
+  }
+
+  /* Logo */
+  .logo-text {
+    font-size: 1.05rem;
+  }
+  .logo-text span {
+    font-size: 0.72rem;
+    padding: 1px 4px;
+  }
+  .logo-symbol {
+    width: 30px;
+    height: 30px;
+  }
+
+  /* Stats Grid: Linearize for narrow screens */
+  .stats-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  /* Status Panel Items */
+  .status-item {
+    padding: 8px 10px;
+    gap: 8px;
+  }
+  .status-val {
+    font-size: 0.8rem;
+  }
+
+  /* Glass Card */
+  .glass-card {
+    padding: 16px 12px;
+  }
+
+  /* Project Pipeline Step */
+  .project-pipeline {
+    font-size: 0.6rem;
+    padding: 8px 6px;
+  }
+
+  /* Hero Visual Stage */
+  .hero-visual-stage {
+    height: 240px;
+  }
+
+  /* Console */
+  .console-header {
+    padding: 10px 12px;
+  }
+  .console-title {
+    font-size: 0.65rem;
+  }
+  .console-body {
+    padding: 12px 8px;
+    font-size: 0.75rem;
   }
 }
