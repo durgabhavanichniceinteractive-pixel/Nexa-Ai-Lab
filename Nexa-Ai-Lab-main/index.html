@@ -1,0 +1,626 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NEXA AI LAB — Building the Intelligence of Tomorrow</title>
+    <meta name="description" content="NEXA AI LAB is an advanced AI research and innovation laboratory exploring artificial intelligence, robotics, machine learning, computer vision, and autonomous systems." />
+    <meta property="og:title" content="NEXA AI LAB — Building the Intelligence of Tomorrow" />
+    <meta property="og:description" content="An AI research and innovation laboratory focused on the future of artificial intelligence, robotics, computer vision, and generative systems." />
+    <meta property="og:type" content="website" />
+    <meta name="theme-color" content="#030508" />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <!-- Cursor elements -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-ring"></div>
+
+    <!-- Global Header -->
+    <header class="header" id="mainHeader">
+      <div class="container header-inner">
+        <a href="index.html" class="logo" aria-label="NEXA AI LAB Home">
+          <div class="logo-symbol">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <polygon points="24,4 42,14 42,34 24,44 6,34 6,14" stroke="#00f0ff" stroke-width="2" fill="rgba(0, 240, 255, 0.05)" />
+              <circle cx="24" cy="24" r="6" fill="#00f0ff" />
+              <line x1="24" y1="4" x2="24" y2="18" stroke="#00f0ff" stroke-width="1.5" stroke-dasharray="2 2" />
+              <line x1="24" y1="30" x2="24" y2="44" stroke="#00f0ff" stroke-width="1.5" stroke-dasharray="2 2" />
+              <line x1="6" y1="14" x2="19" y2="21" stroke="#8b5cf6" stroke-width="1.5" />
+              <line x1="42" y1="34" x2="29" y2="27" stroke="#8b5cf6" stroke-width="1.5" />
+              <circle cx="24" cy="4" r="2.5" fill="#8b5cf6" />
+              <circle cx="42" cy="14" r="2.5" fill="#00f0ff" />
+              <circle cx="42" cy="34" r="2.5" fill="#8b5cf6" />
+              <circle cx="24" cy="44" r="2.5" fill="#00f0ff" />
+              <circle cx="6" cy="34" r="2.5" fill="#8b5cf6" />
+              <circle cx="6" cy="14" r="2.5" fill="#00f0ff" />
+            </svg>
+          </div>
+          <span class="logo-text">NEXA <span>AI LAB</span></span>
+        </a>
+
+        <!-- Desktop Navigation -->
+        <nav aria-label="Primary Navigation">
+          <ul class="nav-links">
+            <li><a href="index.html" class="nav-link active">Home</a></li>
+            <li><a href="about.html" class="nav-link">About</a></li>
+            <li><a href="technologies.html" class="nav-link">Technologies</a></li>
+            <li><a href="projects.html" class="nav-link">Projects</a></li>
+            <li><a href="research.html" class="nav-link">Research</a></li>
+            <li><a href="robotics.html" class="nav-link">Robotics</a></li>
+            <li><a href="insights.html" class="nav-link">Insights</a></li>
+            <li><a href="contact.html" class="nav-link">Contact</a></li>
+          </ul>
+        </nav>
+
+        <!-- Header Actions -->
+        <div class="header-actions">
+          <button id="audioToggleBtn" class="btn btn-secondary btn-sm" aria-pressed="false" title="Toggle audio feedback">SFX: OFF</button>
+          <a href="research.html" class="btn btn-primary btn-sm">Explore AI &rarr;</a>
+          <button class="hamburger" id="hamburgerBtn" aria-label="Open mobile navigation menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Mobile Navigation Drawer -->
+    <div class="mobile-nav-backdrop" id="mobileNavBackdrop"></div>
+    <div class="mobile-nav" id="mobileNav" aria-label="Mobile Navigation">
+      <div class="mobile-nav-header">
+        <div class="mobile-nav-brand">
+          <span class="status-indicator pulse green" style="width: 8px; height: 8px;"></span>
+          <span style="font-family: var(--font-heading); font-size: 0.95rem; letter-spacing: 0.08em;">NEXA <span class="text-gradient">LAB</span></span>
+        </div>
+        <button class="mobile-nav-close" id="mobileNavClose" aria-label="Close mobile navigation menu" type="button">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+          <span>CLOSE</span>
+        </button>
+      </div>
+      <ul class="mobile-links">
+        <li><a href="index.html" class="active">01. Home &rarr;</a></li>
+        <li><a href="about.html">02. About &rarr;</a></li>
+        <li><a href="technologies.html">03. Technologies &rarr;</a></li>
+        <li><a href="projects.html">04. Projects &rarr;</a></li>
+        <li><a href="research.html">05. Research &rarr;</a></li>
+        <li><a href="robotics.html">06. Robotics &rarr;</a></li>
+        <li><a href="insights.html">07. Insights &rarr;</a></li>
+        <li><a href="contact.html">08. Contact &rarr;</a></li>
+      </ul>
+      <div class="mobile-nav-footer">
+        <a href="research.html" class="btn btn-primary" style="width: 100%;">Explore AI Research &rarr;</a>
+        <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted); text-align: center;">
+          SYS_CORE: v4.8.2 // SECURE_SOCKET
+        </div>
+      </div>
+    </div>
+
+    <main>
+      <!-- HERO SECTION -->
+      <section class="hero" id="homeHero">
+        <div class="hero-canvas-container">
+          <canvas id="heroCanvas"></canvas>
+        </div>
+
+        <div class="container hero-container-wide">
+          <div class="hero-layout">
+            <div class="hero-content reveal-on-scroll">
+              <div class="hero-tag">
+                <span class="tech-tag">FRONTIER AI RESEARCH & ROBOTICS LAB</span>
+              </div>
+              <h1 class="hero-title">
+                BUILDING THE <br />
+                <span class="text-gradient">INTELLIGENCE</span> <br />
+                OF TOMORROW
+              </h1>
+              <p class="hero-subtitle">
+                Exploring artificial intelligence, robotics and emerging technologies to create systems that expand what humans can imagine, build and achieve.
+              </p>
+              <div class="hero-cta">
+                <a href="research.html" class="btn btn-primary" id="btnHeroResearch">Explore Our Research</a>
+                <a href="projects.html" class="btn btn-secondary" id="btnHeroProjects">Discover Our Projects</a>
+              </div>
+            </div>
+
+            <!-- Hero 3D Visual Stage -->
+            <div class="hero-visual-stage reveal-on-scroll">
+              <div class="neural-core-canvas-wrap">
+                <canvas id="heroNeuralCanvas"></canvas>
+                <div class="hero-hud-badge hero-hud-badge-tl">CORE_NODE // 96.4 TFLOPS</div>
+                <div class="hero-hud-badge hero-hud-badge-tr">LATENCY: 1.1ms // P99</div>
+                <div class="hero-hud-badge hero-hud-badge-bl">SYNAPSE CLOUD: 48B</div>
+                <div class="hero-hud-badge hero-hud-badge-br">QUANTUM STATE: LOCKED</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- FULL-WIDTH EXPANDED AI STATUS PANEL SECTION -->
+          <div class="status-panel-section-wrap reveal-on-scroll" id="statusPanelSectionWrap">
+            <div class="status-panel tech-corners" id="aiStatusPanel">
+              <div class="status-item">
+                <div class="status-indicator pulse green"></div>
+                <div>
+                  <div class="status-label">SYSTEM STATUS</div>
+                  <div class="status-val">ONLINE (99.98%)</div>
+                </div>
+              </div>
+              <div class="status-item">
+                <div class="status-indicator pulse"></div>
+                <div>
+                  <div class="status-label">AI CORE ENGINE</div>
+                  <div class="status-val">ACTIVE (v4.8)</div>
+                </div>
+              </div>
+              <div class="status-item">
+                <div class="status-indicator"></div>
+                <div>
+                  <div class="status-label">NEURAL NETWORK</div>
+                  <div class="status-val">128 NODES SYNCED</div>
+                </div>
+              </div>
+              <div class="status-item">
+                <div class="status-indicator pulse"></div>
+                <div>
+                  <div class="status-label">RESEARCH MODE</div>
+                  <div class="status-val">AUTONOMOUS</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- INTRODUCTION SECTION -->
+      <section class="section" id="introductionSection">
+        <div class="container">
+          <div class="section-header center reveal-on-scroll">
+            <div class="tech-tag tech-tag-purple" style="margin-bottom: 16px;">THE NEXA MANIFESTO</div>
+            <h2>WE DON'T JUST PREDICT THE FUTURE.<br /><span class="text-gradient">WE ENGINEER IT.</span></h2>
+            <p class="subheading">
+              At NEXA AI LAB, we bridge theoretical frontier research and tangible physical engineering. Our interdisciplinary laboratory invents next-generation generative models, physical embodiment intelligence, adaptive computer vision, and resilient multi-agent systems designed to operate safely in our complex physical world.
+            </p>
+          </div>
+
+          <!-- ANIMATED STATISTICS SECTION -->
+          <div class="stats-grid reveal-on-scroll">
+            <div class="stat-card tech-corners">
+              <div class="stat-number" data-target="12+">0</div>
+              <div class="stat-label">Active Research Areas</div>
+            </div>
+            <div class="stat-card tech-corners">
+              <div class="stat-number" data-target="48">0</div>
+              <div class="stat-label">Experimental Projects</div>
+            </div>
+            <div class="stat-card tech-corners">
+              <div class="stat-number" data-target="19">0</div>
+              <div class="stat-label">AI Models Deployed</div>
+            </div>
+            <div class="stat-card tech-corners">
+              <div class="stat-number" data-target="07">0</div>
+              <div class="stat-label">Global Research Partners</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TECHNOLOGIES SECTION -->
+      <section class="section" id="technologiesSection" style="background: rgba(4, 7, 15, 0.6);">
+        <div class="container">
+          <div class="section-header reveal-on-scroll">
+            <span class="tech-tag" style="margin-bottom: 16px;">FOUNDATIONAL PILLARS</span>
+            <h2>THE TECHNOLOGIES<br /><span class="text-gradient">POWERING TOMORROW</span></h2>
+            <p class="subheading">
+              Six foundational domains driving breakthroughs across computational intelligence, physical robotics, and human-machine synergy.
+            </p>
+          </div>
+
+          <div class="tech-grid">
+            <!-- 1. Generative AI -->
+            <div class="tech-card tech-corners reveal-on-scroll">
+              <div>
+                <div class="tech-card-icon">
+                  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/>
+                  </svg>
+                </div>
+                <h3>Generative AI</h3>
+                <p>Systems that synthesize text, high-dimensional imagery, spatial audio, physics-bound video, and novel digital representations with unprecedented contextual fidelity.</p>
+              </div>
+              <a href="technologies.html#genai" class="tech-card-link">Explore Architecture &rarr;</a>
+            </div>
+
+            <!-- 2. Computer Vision -->
+            <div class="tech-card tech-corners reveal-on-scroll">
+              <div>
+                <div class="tech-card-icon">
+                  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/>
+                    <circle cx="12" cy="12" r="3"/>
+                  </svg>
+                </div>
+                <h3>Computer Vision</h3>
+                <p>Teaching machines to perceive, reconstruct, and interpret high-speed spatial environments, semantic geometric structures, and dynamic temporal phenomena.</p>
+              </div>
+              <a href="technologies.html#vision" class="tech-card-link">Explore Architecture &rarr;</a>
+            </div>
+
+            <!-- 3. Machine Learning -->
+            <div class="tech-card tech-corners reveal-on-scroll">
+              <div>
+                <div class="tech-card-icon">
+                  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect width="18" height="18" x="3" y="3" rx="2"/>
+                    <path d="M9 9h6v6H9z"/>
+                    <path d="M3 9h3M3 15h3M18 9h3M18 15h3M9 3v3M15 3v3M9 18v3M15 18v3"/>
+                  </svg>
+                </div>
+                <h3>Machine Learning</h3>
+                <p>Designing meta-learning frameworks and neuro-symbolic algorithms that extract deep patterns from complex multimodal data and self-optimize continuously.</p>
+              </div>
+              <a href="technologies.html#ml" class="tech-card-link">Explore Architecture &rarr;</a>
+            </div>
+
+            <!-- 4. Natural Language AI -->
+            <div class="tech-card tech-corners reveal-on-scroll">
+              <div>
+                <div class="tech-card-icon">
+                  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="m3 21 1.9-5.7a8.5 8.5 0 1 1 3.8 3.8z"/>
+                  </svg>
+                </div>
+                <h3>Natural Language AI</h3>
+                <p>Developing reasoning engines capable of nuance, dialectic comprehension, multimodal translation, and contextual deliberation on par with human intellect.</p>
+              </div>
+              <a href="technologies.html#nlp" class="tech-card-link">Explore Architecture &rarr;</a>
+            </div>
+
+            <!-- 5. Autonomous Systems -->
+            <div class="tech-card tech-corners reveal-on-scroll">
+              <div>
+                <div class="tech-card-icon">
+                  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"/>
+                    <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/>
+                  </svg>
+                </div>
+                <h3>Autonomous Systems</h3>
+                <p>Constructing decentralized agent clusters and spatial edge nodes capable of real-time sensing, probabilistic reasoning, and safe goal execution.</p>
+              </div>
+              <a href="technologies.html#autonomous" class="tech-card-link">Explore Architecture &rarr;</a>
+            </div>
+
+            <!-- 6. Robotics -->
+            <div class="tech-card tech-corners reveal-on-scroll">
+              <div>
+                <div class="tech-card-icon">
+                  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect width="16" height="12" x="4" y="8" rx="2"/>
+                    <path d="M12 2v6M2 14h2M20 14h2M15 13v2M9 13v2"/>
+                  </svg>
+                </div>
+                <h3>Robotics</h3>
+                <p>Infusing physical machines with tactile intelligence, dynamic balance reflex matrices, and cooperative manipulation to solve critical real-world challenges.</p>
+              </div>
+              <a href="robotics.html" class="tech-card-link">Explore Architecture &rarr;</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FUTURE LAB SECTION -->
+      <section class="section" id="futureLabSection">
+        <div class="container">
+          <div class="section-header reveal-on-scroll">
+            <span class="tech-tag tech-tag-purple" style="margin-bottom: 16px;">EXPERIMENTAL PROVING GROUND</span>
+            <h2>INSIDE THE <span class="text-gradient">FUTURE LAB</span></h2>
+            <p class="subheading">
+              Step into our experimental divisions where theoretical algorithms meet live prototypes. Hover each panel to examine real-time telemetry.
+            </p>
+          </div>
+
+          <div class="future-lab-container reveal-on-scroll">
+            <!-- 01 — AI VISION -->
+            <div class="lab-panel active" id="labPanel01">
+              <div>
+                <div class="lab-panel-num">01</div>
+                <h3 class="lab-panel-title">AI VISION</h3>
+                <p class="lab-panel-quote">“Machines that understand the world around them.”</p>
+              </div>
+              <div class="lab-panel-extra">
+                <span class="lab-telemetry-tag">TELEMETRY // OPTICAL RECON</span>
+                <p style="font-size: 0.84rem;">Sub-millimeter depth registration running at 240 FPS. Zero-shot 3D radiance fields calculated on mobile edge tensors.</p>
+              </div>
+            </div>
+
+            <!-- 02 — VOICE INTELLIGENCE -->
+            <div class="lab-panel" id="labPanel02">
+              <div>
+                <div class="lab-panel-num">02</div>
+                <h3 class="lab-panel-title">VOICE INTELLIGENCE</h3>
+                <p class="lab-panel-quote">“Natural conversations between humans and intelligent systems.”</p>
+              </div>
+              <div class="lab-panel-extra">
+                <span class="lab-telemetry-tag">TELEMETRY // PROSODIC PHONEMES</span>
+                <p style="font-size: 0.84rem;">Direct speech-to-speech cognitive latency under 120ms with emotional contour matching and real-time semantic synthesis.</p>
+              </div>
+            </div>
+
+            <!-- 03 — PREDICTIVE AI -->
+            <div class="lab-panel" id="labPanel03">
+              <div>
+                <div class="lab-panel-num">03</div>
+                <h3 class="lab-panel-title">PREDICTIVE AI</h3>
+                <p class="lab-panel-quote">“Turning complex data into actionable predictions.”</p>
+              </div>
+              <div class="lab-panel-extra">
+                <span class="lab-telemetry-tag">TELEMETRY // TEMPORAL FORECAST</span>
+                <p style="font-size: 0.84rem;">Multi-horizon probabilistic forecasting predicting multivariate industrial bottlenecks 96 hours before occurrence.</p>
+              </div>
+            </div>
+
+            <!-- 04 — HUMAN + AI -->
+            <div class="lab-panel" id="labPanel04">
+              <div>
+                <div class="lab-panel-num">04</div>
+                <h3 class="lab-panel-title">HUMAN + AI</h3>
+                <p class="lab-panel-quote">“Designing systems where human creativity and machine intelligence work together.”</p>
+              </div>
+              <div class="lab-panel-extra">
+                <span class="lab-telemetry-tag">TELEMETRY // SYMBIOTIC COGNITION</span>
+                <p style="font-size: 0.84rem;">Intent-anticipatory co-pilots dynamically sharing control authority during precision medical and engineering tasks.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROJECTS SECTION -->
+      <section class="section" id="projectsSection" style="background: rgba(5, 8, 16, 0.8);">
+        <div class="container">
+          <div class="section-header reveal-on-scroll" style="display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 20px;">
+            <div>
+              <span class="tech-tag" style="margin-bottom: 16px;">FEATURED SYSTEMS</span>
+              <h2>EXPERIMENTS BECOME <span class="text-gradient">SYSTEMS</span></h2>
+              <p class="subheading">Active technological platforms transitioning from laboratory hypothesis to live field deployments.</p>
+            </div>
+            <a href="projects.html" class="btn btn-secondary btn-sm">View Full Portfolio (8 Projects) &rarr;</a>
+          </div>
+
+          <div class="projects-grid">
+            <!-- Project 01: NEXA VISION -->
+            <div class="project-card reveal-on-scroll" data-category="vision" data-challenge="Processing multi-camera 4K streams at 120 FPS under 15W edge thermal constraints." data-solution="Sparse attention convolutional-transformer hybrid with hardware-fused neural decoders." data-results="99.4% mean average precision at 4.2ms inference latency." data-status="DEPLOYED">
+              <div class="project-media">
+                <img src="https://images.unsplash.com/photo-1507146426996-ef05306b995a?auto=format&fit=crop&w=800&q=80" alt="NEXA VISION Computer Vision System" loading="lazy" />
+                <div class="project-badge-overlay">
+                  <span class="tech-tag">COMPUTER VISION</span>
+                </div>
+                <div class="project-status-overlay">DEPLOYED</div>
+              </div>
+              <div class="project-body">
+                <div>
+                  <h3>NEXA VISION</h3>
+                  <p>AI-powered computer vision system capable of identifying objects, environments and complex geometric patterns in microsecond intervals.</p>
+                  <div class="project-tags">
+                    <span class="project-tag">Neural Mesh</span>
+                    <span class="project-tag">Spatial NeRF</span>
+                    <span class="project-tag">Edge Tensor</span>
+                  </div>
+                </div>
+                <div class="project-footer">
+                  <button class="btn btn-secondary btn-sm btn-inspect-specs">Inspect Specs</button>
+                  <a href="projects.html" class="tech-card-link">Details &rarr;</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Project 02: SYNAPSE -->
+            <div class="project-card reveal-on-scroll" data-category="gen-ai" data-challenge="Bridging symbolic mathematical logic with creative multimodal generative representation." data-solution="Dual-stream neuro-symbolic reasoning engine with verifiable verification checkpoints." data-results="Eliminated hallucinations by 92% across rigorous science benchmarks." data-status="PHASE 4 TRIAL">
+              <div class="project-media">
+                <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=800&q=80" alt="SYNAPSE Multimodal Intelligence" loading="lazy" />
+                <div class="project-badge-overlay">
+                  <span class="tech-tag tech-tag-purple">GENERATIVE AI</span>
+                </div>
+                <div class="project-status-overlay">PHASE 4 TRIAL</div>
+              </div>
+              <div class="project-body">
+                <div>
+                  <h3>SYNAPSE</h3>
+                  <p>A next-generation generative AI system designed to connect text, visual information and deep causal reasoning into unified conceptual graphs.</p>
+                  <div class="project-tags">
+                    <span class="project-tag">Multimodal</span>
+                    <span class="project-tag">Neuro-Symbolic</span>
+                    <span class="project-tag">Diffusion</span>
+                  </div>
+                </div>
+                <div class="project-footer">
+                  <button class="btn btn-secondary btn-sm btn-inspect-specs">Inspect Specs</button>
+                  <a href="projects.html" class="tech-card-link">Details &rarr;</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Project 03: ATLAS -->
+            <div class="project-card reveal-on-scroll" data-category="robotics" data-challenge="Real-time kinematic stabilization across irregular geological surfaces under high cross-winds." data-solution="High-frequency reinforcement learning policy operating at 1,000Hz direct joint torque feedback." data-results="Maintained 100% footing recovery in simulated 50-degree scree inclines." data-status="FIELD VALIDATED">
+              <div class="project-media">
+                <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=800&q=80" alt="ATLAS Autonomous Navigation Robotics" loading="lazy" />
+                <div class="project-badge-overlay">
+                  <span class="tech-tag">ROBOTICS</span>
+                </div>
+                <div class="project-status-overlay">FIELD VALIDATED</div>
+              </div>
+              <div class="project-body">
+                <div>
+                  <h3>ATLAS</h3>
+                  <p>Autonomous navigation and dynamic balance technology for intelligent machines and bipedal exploratory platforms.</p>
+                  <div class="project-tags">
+                    <span class="project-tag">Kinematics</span>
+                    <span class="project-tag">Lidar SLAM</span>
+                    <span class="project-tag">Actuation</span>
+                  </div>
+                </div>
+                <div class="project-footer">
+                  <button class="btn btn-secondary btn-sm btn-inspect-specs">Inspect Specs</button>
+                  <a href="projects.html" class="tech-card-link">Details &rarr;</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Project 04: ORBIT -->
+            <div class="project-card reveal-on-scroll" data-category="ai" data-challenge="Synthesizing petabytes of streaming satellite telemetry with zero ground latency." data-solution="Distributed graph neural network with asynchronous federated weight propagation." data-results="3.8x faster orbital anomaly prediction compared to traditional ground filters." data-status="ORBITAL DEPLOY">
+              <div class="project-media">
+                <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=800&q=80" alt="ORBIT Predictive Decision AI" loading="lazy" />
+                <div class="project-badge-overlay">
+                  <span class="tech-tag tech-tag-purple">PREDICTIVE AI</span>
+                </div>
+                <div class="project-status-overlay">ORBITAL DEPLOY</div>
+              </div>
+              <div class="project-body">
+                <div>
+                  <h3>ORBIT</h3>
+                  <p>AI system for predictive spatial analysis, planetary telemetry forecasting, and real-time autonomous decision support.</p>
+                  <div class="project-tags">
+                    <span class="project-tag">Graph Neural Net</span>
+                    <span class="project-tag">Federated AI</span>
+                    <span class="project-tag">Time-Series</span>
+                  </div>
+                </div>
+                <div class="project-footer">
+                  <button class="btn btn-secondary btn-sm btn-inspect-specs">Inspect Specs</button>
+                  <a href="projects.html" class="tech-card-link">Details &rarr;</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- EXTRA INTERACTIVE FEATURE: FUTURISTIC AI CONSOLE -->
+      <section class="section" id="aiConsoleSection">
+        <div class="container">
+          <div class="section-header center reveal-on-scroll">
+            <span class="tech-tag">INTERACTIVE LABORATORY TELEMETRY</span>
+            <h2>NEXA AI CORE <span class="text-gradient">INTERFACE</span></h2>
+            <p class="subheading">Query our active simulated neural intelligence core in real-time to preview predicted future technological scenarios.</p>
+          </div>
+
+          <div class="console-wrapper reveal-on-scroll">
+            <div class="console-header">
+              <div class="console-dots">
+                <div class="console-dot"></div>
+                <div class="console-dot"></div>
+                <div class="console-dot"></div>
+              </div>
+              <div class="console-title">NEXA_CORE_CLI // QUANTUM_LINK: 99.8% // ENCRYPTED</div>
+              <div class="status-indicator green" style="width: 8px; height: 8px;"></div>
+            </div>
+            <div class="console-body">
+              <div class="console-line"><span class="console-system">SYS_BOOT:</span> NEXA AI CORE v4.8 initialized on 128 Tensor Nodes.</div>
+              <div class="console-line"><span class="console-system">STATUS:</span> <span id="consoleStatusLine">AI CORE ONLINE — READY FOR QUERIES</span></div>
+              <div class="console-line"><span class="console-system">TELEMETRY:</span> Memory: 9.4 PB Synthesized // Latency: 1.1ms // Quantum Entropy: 0.002</div>
+              
+              <div class="console-output" id="consoleOutput">
+                Future scenario identified: Human-AI collaboration will become a fundamental layer of digital work. Click [RUN ANALYSIS] to process next scenario matrix.
+              </div>
+
+              <div class="console-actions">
+                <button class="btn btn-primary btn-sm" id="runAnalysisBtn">[RUN ANALYSIS]</button>
+                <a href="research.html" class="btn btn-secondary btn-sm">Read Full Research Whitepaper</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- GLOBAL FOOTER -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <a href="index.html" class="logo">
+              <div class="logo-symbol">
+                <svg viewBox="0 0 48 48" fill="none">
+                  <polygon points="24,4 42,14 42,34 24,44 6,34 6,14" stroke="#00f0ff" stroke-width="2" fill="rgba(0, 240, 255, 0.05)" />
+                  <circle cx="24" cy="24" r="6" fill="#00f0ff" />
+                </svg>
+              </div>
+              <span class="logo-text">NEXA <span>AI LAB</span></span>
+            </a>
+            <p><strong>Building the Intelligence of Tomorrow.</strong></p>
+            <p style="color: var(--text-muted); font-size: 0.88rem; margin-top: 8px;">
+              An international research and innovation laboratory engineering autonomous intelligence, computer vision, and physical robotics.
+            </p>
+          </div>
+
+          <div class="footer-col">
+            <h4>Explore</h4>
+            <ul class="footer-links">
+              <li><a href="about.html">About Laboratory</a></li>
+              <li><a href="technologies.html">Core Technologies</a></li>
+              <li><a href="projects.html">Live Projects</a></li>
+              <li><a href="research.html">Research Pipeline</a></li>
+              <li><a href="robotics.html">Robotics Division</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h4>Resources</h4>
+            <ul class="footer-links">
+              <li><a href="insights.html">Laboratory Insights</a></li>
+              <li><a href="research.html#papers">Documentation</a></li>
+              <li><a href="about.html#careers">Careers & Fellowships</a></li>
+              <li><a href="contact.html">Contact Headquarters</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h4>Connect</h4>
+            <p style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 16px;">
+              Future Technology District, Sector 7, Cybernetics Way.<br />
+              Secure PGP Inquiries: <a href="mailto:hello@nexaailab.com" style="color: var(--cyan);">hello@nexaailab.com</a>
+            </p>
+            <div class="social-links">
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+              </a>
+              <a href="https://x.com" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="X (Twitter)">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4l11.733 16h4.267l-11.733 -16z"/><path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772"/></svg>
+              </a>
+              <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+              </a>
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Instagram">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <div>&copy; 2026 NEXA AI LAB. All rights reserved. Precision Neural Systems.</div>
+          <div style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--text-muted);">
+            LAB LATENCY: 1.1ms // QUANTUM REGISTRY: ACTIVE
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Technical Specs / Inspection Modal -->
+    <div class="modal-backdrop" id="appModalBackdrop" role="dialog" aria-modal="true">
+      <div class="modal-container" id="appModalContainer">
+        <button class="modal-close" id="appModalClose" aria-label="Close dialog">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+        <div id="appModalContent"></div>
+      </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="./script.js" defer></script>
+  </body>
+</html>
